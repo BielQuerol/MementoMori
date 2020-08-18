@@ -16,7 +16,8 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden sol
 
 ## ServerRoutes (Back-end):
 
-**Método** |  **Ruta**       |   Descripción    |      Request-Body    
+**Método** |  **Ruta**       |   Descripción    |      Request-Body 
+---------------------------------------------------------------------
 
 GET         | /               | Renderiza la HomePage |
 
