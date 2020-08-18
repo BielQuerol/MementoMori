@@ -32,19 +32,21 @@ POST       | /signup         | Envía los datos del formulario signup al servido
 
 
 ## Modelos
-* **Modelo user:**
+**Modelo user:**
 
 {
 
-userName : type String.
-email : type String.
-password: type String;
-userImage: type String,
-helprequestsId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
-* **Modelo HelpRequest:**
+* userName : type String.
+* email : type String.
+* password: type String;
+* userImage: type String,
+* helprequestsId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
+
+**Modelo HelpRequest:**
+
 {
 
-userId: { type: Schema.Types.ObjectId, ref: 'User' },
-HelpRequestTitle: type String,
-HelpRequestDescription: type String,
-HelpRequestTime: type Number,}
+* userId: { type: Schema.Types.ObjectId, ref: 'User' },
+* HelpRequestTitle: type String,
+* HelpRequestDescription: type String,
+* HelpRequestTime: type Number,}
