@@ -19,5 +19,32 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden sol
 **Método** |  **Ruta**       |   Descripción    |      Request-Body 
 -----------|-----------------|------------------|-------------------
 GET        | /               | Renderiza la HomePage |
+GET        | /login          | Renderiza el formulario de login |
+POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
+GET        | /signup         | Renderiza el formulario de signup |
+POST       | /signup         | Envía los datos del formulario signup al servidor | {username, email, password} |
 
 [Miro](https://miro.com/app/board/o9J_knOMXgU=/)
+
+
+
+
+
+
+## Modelos
+* **Modelo user:**
+
+{
+
+userName : type String.
+email : type String.
+password: type String;
+userImage: type String,
+helprequestsId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
+* **Modelo HelpRequest:**
+{
+
+userId: { type: Schema.Types.ObjectId, ref: 'User' },
+HelpRequestTitle: type String,
+HelpRequestDescription: type String,
+HelpRequestTime: type Number,}
