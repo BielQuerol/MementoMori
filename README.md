@@ -12,8 +12,12 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden sol
 * **Userindex**:Como usuario deseo poder acceder a mi página de perfil y pedir ayuda o ayudar a otros.
 * **Helpmeform**:Como usuario deseo poder solicitar ayuda mediante el formulario "Help me".
 * **HelpOthersList**:Como usuario deseo poder ver todas las llamadas de ayuda solicitadas por los demás usuarios.
-* **HelpRequestDetails**:Como usuario deseo poder ver de qué trata cada solicitud de ayuda para decidir si quiero y puedo ayudar.
+* **HelpRequestDetails**:Como usuario deseo poder ver sobre qué trata cada solicitud de ayuda para decidir si quiero y puedo ayudar.
 
+## ServerRoutes (Back-end):
 
+**Método** |  **Ruta**       |   Descripción    |      Request-Body    
+
+GET         | /               | Renderiza la HomePage |
 
 [Miro](https://miro.com/app/board/o9J_knOMXgU=/)
