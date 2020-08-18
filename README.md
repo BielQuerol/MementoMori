@@ -16,3 +16,4 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden sol
 
 
 
+[Miro](https://miro.com/app/board/o9J_knOMXgU=/
