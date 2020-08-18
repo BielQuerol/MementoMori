@@ -22,8 +22,13 @@ GET        | /               | Renderiza la HomePage |
 GET        | /login          | Renderiza el formulario de login |
 POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
 GET        | /signup         | Renderiza el formulario de signup |
-POST       | /signup         | Envía los datos del formulario signup al servidor | {username, email, password} |
+POST       | /signup         | Envía los datos del formulario signup al servidor | {username, email, password, userImage} |
+GET        | /userindex      | Renderiza la página del usuario | 
+GET        | /helpmeform     | Renderiza el formulario de helprequest del usuario |                                       |
+POST       | /helpmeform     | Envía los datos del formulario al servidor y te redirige a la página helprequests | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
 
+
+Link a wireframes 
 [Miro](https://miro.com/app/board/o9J_knOMXgU=/)
 
 
@@ -32,21 +37,19 @@ POST       | /signup         | Envía los datos del formulario signup al servido
 
 
 ## Modelos
-**Modelo user:**
+**Modelo User:**
 
 {
-
 * userName : type String.
 * email : type String.
 * password: type String;
 * userImage: type String,
-* helprequestsId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
+* helpRequestId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
 
 **Modelo HelpRequest:**
 
 {
-
 * userId: { type: Schema.Types.ObjectId, ref: 'User' },
-* HelpRequestTitle: type String,
-* HelpRequestDescription: type String,
-* HelpRequestTime: type Number,}
+* helpRequestTitle: type String,
+* helpRequestDescription: type String,
+* helpRequestTime: type Number,}
