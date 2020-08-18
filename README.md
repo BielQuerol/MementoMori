@@ -22,15 +22,25 @@ GET        | /               | Renderiza la HomePage |
 GET        | /login          | Renderiza el formulario de login |
 POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
 GET        | /signup         | Renderiza el formulario de signup |
-POST       | /signup         | Envía los datos del formulario signup al servidor | {username, email, password, userImage} |
+POST       | /signup         | Envía los datos del formulario signup al servidor y te redirige a la página del usuario | {username, email, password, userImage} |
 GET        | /userindex      | Renderiza la página del usuario | 
-GET        | /helpmeform     | Renderiza el formulario de helprequest del usuario |                                       |
-POST       | /helpmeform     | Envía los datos del formulario al servidor y te redirige a la página helprequests | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
+GET        | /helpmeform     | Renderiza el formulario de help request del usuario |                                       |
+POST       | /helpmeform     | Envía los datos del formulario helpme al servidor y te redirige a la página helprequests | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
+GET        | /helprequests   | Renderiza la página con todas las solicitudes (help requests) de los usuarios |
+GET        | /helprequestdetails/:id | Renderiza una solicitud particular con sus detalles |
+GET        |/helperform/:id | Renderiza el formulario helperform |
+POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud helprequest y te redirige a la página userindex |
+GET        | /helprequest/:id | Renderiza el helpmeform (helprequest solicitada por el propio usuario) para poder editarla o borrarla |
+PUT        | /helprequest/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
+DELETE     | /helprequest/:id | Borra la help request solicitada anteriormente por el usuario.
+
 
 
 Link a wireframes 
 [Miro](https://miro.com/app/board/o9J_knOMXgU=/)
 
+Link a 
+[Trello](https://trello.com/b/BNeRcowY/memento-mori)
 
 
 
