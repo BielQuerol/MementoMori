@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden solicitar y ayudar a los demás. Para que esta red solidaria crezca se realiza de forma exponencial, es decir, por cada ayuda recibida debes ayudar a 3 usuarios.
+Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden pedir ayuda y ayudar a los demás. Para que esta red solidaria crezca se realiza de forma exponencial, es decir, por cada ayuda recibida debes ayudar a 3 usuarios.
 
 ## User Stories
 * **Homepage**: Como usuario deseo encontrar una página donde hacer log in y sign up.
@@ -63,3 +63,14 @@ Link a
 * helpRequestTitle: type String,
 * helpRequestDescription: type String,
 * helpRequestTime: type Number,}
+
+
+## Backlog 
+
+
+## Links
+
+* Link url to repository on github and deploy
+
+* Link url to Slides presentation
+
