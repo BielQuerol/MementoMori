@@ -60,7 +60,7 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 POST       | /auth/login     | {email. password}    |     200                  |
 POST       | auth/signup     | {username, email, password} | 201               |
 GET        | auth/user       |                      |     200                  |
-GET        | /helpotherslist |     {title, userId}  |     200                  |
+GET        | /helpotherslist |     {title, helpOthersRequests}  |     200                  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
 GET        |/helperform/:id  |   {userId}               |                200   |
 POST       | /helperform/:id | {sender, senderTel, senderEmail, message } |201 |
