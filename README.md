@@ -76,5 +76,5 @@ Link url a los repositorio de Github:
 
 y al deploy:
 
-Link url a la presentación de slides
+Link url a la presentación de slides:
 
