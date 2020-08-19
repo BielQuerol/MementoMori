@@ -18,7 +18,7 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 
 **Método** |  **Ruta**       |   Descripción    |      Request-Body 
 -----------|-----------------|------------------|-------------------
-GET        | /               | Renderiza la HomePage |
+GET        | /               | Renderiza la Homepage |
 GET        | /login          | Renderiza el formulario de login |
 POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
 GET        | /signup         | Renderiza el formulario de signup |
@@ -32,7 +32,11 @@ GET        |/helperform/:id | Renderiza el formulario helperform |
 POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud help request y te redirige a la página de usuario /userindex |
 GET        | /helpmeform/:id | Renderiza el helpme form (help request solicitada por el propio usuario) para poder editarla o borrarla |
 PUT        | /helpmeform/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza, te redirige a la página del usuario /userindex | {helpRequestTitle, helpRequestDescription, helpRequestCity}|
-DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario.
+DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario. |
+GET        | /edituser/:id   | Renderiza la página del usuario para editarla |
+PUT        | /edituser/:id   | Actualiza la foto del usuario y te redirige a /userindex |
+POST       | /logout         | Actualiza el estado de la sesión y la destruye, te redirige a Homepage |
+
 
 
 
