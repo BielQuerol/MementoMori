@@ -80,26 +80,28 @@ Link a
 ## Modelos
 **Modelo User:**
 
-    {
+````{
  userName : type String.
  email : type String.
  password: type String;
  userImage: type String,
  helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
  helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
+ ````
 
 **Modelo HelpRequest:**
 
-    {
-* userId: { type: Schema.Types.ObjectId, ref: 'User' },
-* Title: type String,
-* Description: type String,
-* City: type String,}
-* helpMessages: [{
+````{
+userId: { type: Schema.Types.ObjectId, ref: 'User' },
+title: type String,
+description: type String,
+city: type String,}
+helpMessages: [{
     sender: { type: Schema.Types.ObjectId, ref: "User"},
     senderTel: String,
     senderEmail: String,
     message: String}],}
+````
 
 
 ## Backlog 
