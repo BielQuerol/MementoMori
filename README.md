@@ -56,16 +56,15 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 ## ServerRoutes (Back-end):
 **Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |     **Comportamiento**  |
 -----------|-----------------|----------------------|--------------------------|-------------------------|
-POST       | /auth/login     | {email. password}    |     200                  |  Autoriza al usuario para acceder  |                  
-POST       | /auth/signup     | {username, email, password} | 201               |  Registra al usuario en la aplicación  |
-GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
+POST       | /auth/login      | {email. password}    |     200                  |  Autoriza al usuario para acceder  |                  
+POST       | /auth/signup     | {username, email, password} | 201              |  Registra al usuario en la aplicación  |
+GET        | /helprequest     | {userId, title, description, city, [ message ]} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
 POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |  Envía los datos de contacto de la persona que ayuda al que ha solicitado dicha ayuda  |
-POST       | /helpmeform     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
-PUT        | /helpmeform/:id | { params }                       |     201      | Modifica los datos de una solicitud de ayuda previa  |
-PUT        | /edituser/:id   | { userImage }                    |    201       | Modifica los datos del usuario  |
-POST       | /auth/logout     |                                  |    204       | Termina la sesión del usuario   |
-
-
+POST       | /helprequest     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
+PUT        | /helprequest/:id | { title, description, city }    |     201      | Modifica los datos de una solicitud de ayuda previa  |
+PUT        | /edituser/:id    | { userImage }                    |    201       | Modifica los datos del usuario  |
+POST       | /auth/logout     |                                 |    204       | Termina la sesión del usuario   |
+DELETE     | /helprequest/:id |                                  |   200       | Elimina una solicitud de ayuda previa |     
 
 
 Link a wireframes
@@ -83,12 +82,12 @@ Link a
 
 ```` 
 {
- userName : type String.
- email : type String.
- password: type String;
+ userName : type String,
+ email : type String,
+ password: type String,
  userImage: type String,
  helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
- helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
+ helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
  }
  ````
 
@@ -99,12 +98,13 @@ Link a
 userId: { type: Schema.Types.ObjectId, ref: 'User' },
 title: type String,
 description: type String,
-city: type String,}
-helpMessages: [{
-    sender: { type: Schema.Types.ObjectId, ref: "User"},
-    senderTel: String,
-    senderEmail: String,
-    message: String}],}
+city: type String,
+helpMessages: [ {
+                sender: { type: Schema.Types.ObjectId, ref: "User" },
+                senderTel: String,
+                senderEmail: String,
+                message: String } ],
+               }
 ````
 
 
@@ -114,11 +114,16 @@ helpMessages: [{
 
 ## Links
 
+Link a wireframes
+[Miro](https://miro.com/app/board/o9J_knOMXgU=/)
+
 Link url a los repositorio de Github: 
 * [Github Memento Client](https://github.com/BielQuerol/MementoMori)
-* [Github Memento Server](https://github.com/BielQuerol/Mementoserver)
+* [Github Memento Server](https://github.com/BielQuerol/Mementobackend)
 
 Link url al deploy:
 
+Link a 
+[Trello](https://trello.com/b/BNeRcowY/memento-mori)
 Link url a la presentación de slides:
 
