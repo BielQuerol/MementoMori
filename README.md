@@ -71,8 +71,8 @@ Link a
 ## Links
 
 * Link url a los repositorio de Github: 
-[Github Memento Client](https://github.com/BielQuerol/MementoMori)
-[Github Memento Server](https://github.com/BielQuerol/Mementoserver)
+* [Github Memento Client](https://github.com/BielQuerol/MementoMori)
+* [Github Memento Server](https://github.com/BielQuerol/Mementoserver)
 y al deploy:
 
 * Link url a la presentación de slides
