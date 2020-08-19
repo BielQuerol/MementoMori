@@ -29,8 +29,8 @@ POST       | /helpmeform     | Envía los datos del formulario helpme al servido
 GET        | /helpotherslist   | Renderiza la página con todas las solicitudes (help requests) de los usuarios |
 GET        | /helprequestdetails/:id | Renderiza una solicitud particular con sus detalles |
 GET        |/helperform/:id | Renderiza el formulario helperform |
-POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud helprequest y te redirige a la página userindex |
-GET        | /helpmeform/:id | Renderiza el helpmeform (helprequest solicitada por el propio usuario) para poder editarla o borrarla |
+POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud help request y te redirige a la página userindex |
+GET        | /helpmeform/:id | Renderiza el helpme form (help request solicitada por el propio usuario) para poder editarla o borrarla |
 PUT        | /helpmeform/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
 DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario.
 
