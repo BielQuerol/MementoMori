@@ -57,13 +57,13 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 **Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |     **Comportamiento**  |
 -----------|-----------------|----------------------|--------------------------|-------------------------|
 POST       | /auth/login     | {email. password}    |     200                  |  Autoriza al usuario para acceder  |                  
-POST       | auth/signup     | {username, email, password} | 201               |  Registra al usuario en la aplicación  |
+POST       | /auth/signup     | {username, email, password} | 201               |  Registra al usuario en la aplicación  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
 POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |  Envía los datos de contacto de la persona que ayuda al que ha solicitado dicha ayuda  |
 POST       | /helpmeform     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
 PUT        | /helpmeform/:id | { params }                       |     201      | Modifica los datos de una solicitud de ayuda previa  |
 PUT        | /edituser/:id   | { userImage }                    |    201       | Modifica los datos del usuario  |
-POST       | auth/logout     |                                  |    204       | Termina la sesión del usuario   |
+POST       | /auth/logout     |                                  |    204       | Termina la sesión del usuario   |
 
 
 
