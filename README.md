@@ -22,13 +22,12 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 /        | HomePage             | Anonymous only  | Homepage                 |
 /signup  | SignupPage           | Anon            | Formulario signup, link a login. Te dirige a userindex una vez registrado|
 /login   | LoginPage            | Anon            | Formulario login, link a signup. Te dirige a userindex una vez logueado.|
-/logout  | n/a                  | Usuario         | Te redirige a HomePage después del logout y termina la sesión |
-/userindex/:id |ShowUser        | Usuario         | Te muestra la página del usuario, link a solicitudes propias de ayuda, link a lista de solicitudes de ayuda de otros, link a editar perfil y link a logout |
-/userindex/edit/:id | EditUser  | Usuario         | Te muestra la página del perfil del usuario para editarla |
+/userindex |ShowUser        | Usuario         | Te muestra la página del usuario, link a solicitudes propias de ayuda, link a lista de solicitudes de ayuda de otros, link a editar perfil y link a logout |
+/userindex/edit | EditUser  | Usuario         | Te muestra la página del perfil del usuario para editarla |
 /helpotherslist | HelpOthersList| Usuario         | Te muestra todas las solicitudes de ayuda de otros y link al detalle de cada una de ellas |
-/helpothersrequest/:id | HelpOthersRequest | Usuario | Te muestra una solicitud de ayuda de otra persona en particular, link para aceptar ayudarle |
-/helpothersrequest/senderform/:id | SenderForm    |Usuario | Te muestra el formulario para poder ayudar a la persona que ha solicitado ayuda |
-/userindex/helpmeform/:id | HelpMeForm | Usuario  | Te muestra el formulario para solicitar ayuda.
+/helpothersdetail/:id | HelpOthersRequest | Usuario | Te muestra una solicitud de ayuda de otra persona en particular, link para aceptar ayudarle |
+/helpothersdetail/senderform | SenderForm    |Usuario | Te muestra el formulario para poder ayudar a la persona que ha solicitado ayuda |
+/userindex/helpmeform | HelpMeForm | Usuario  | Te muestra el formulario para solicitar ayuda.
 /userindex/helpmeform/edit/:id |HelpMeFormEdit | Usuario | Te muestra el formulario para editar tu solicitud de ayuda o eliminarla. |
 /userindex/helpmeform/edit/:id | n/a           | Usuario | Elimina la ayuda solicitada. |
 
@@ -55,20 +54,17 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 
 
 ## ServerRoutes (Back-end):
-**Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |
------------|-----------------|----------------------|--------------------------|
-POST       | /auth/login     | {email. password}    |     200                  |
+**Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |     **Comportamiento**  |
+-----------|-----------------|----------------------|--------------------------|-------------------------|
+POST       | /auth/login     | {email. password}    |     200                  |                          
 POST       | auth/signup     | {username, email, password} | 201               |
 GET        | auth/user       |                      |     200                  |
-GET        | /helpotherslist |     {title, helpOthersRequests}  |     200                  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
-GET        |/helperform/:id  |   {userId}               |                200   |
-POST       | /helperform/:id | {sender, senderTel, senderEmail, message } |201 |
+POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |
 GET        | /helpmeform/:id | {userId}                         | 200          |
 POST       | /helpmeform     |{title, description, city}        | 201          |
-PUT        | /helpmeform/:id | {userId,title, description, city}|     201      |
+PUT        | /helpmeform/:id | { params }                       |     201      |
 DELETE     | /helpmeform/:id |                                  | 200          |
-GET        | /edituser/:id   | {userId}                         |    200       |
 PUT        | /edituser/:id   | { userImage }                    |    201       |
 POST       | auth/logout     |                                  |    204       |
 
