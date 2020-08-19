@@ -29,7 +29,7 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 /helpothersdetail/senderform | SenderForm    |Usuario | Te muestra el formulario para poder ayudar a la persona que ha solicitado ayuda |
 /userindex/helpmeform | HelpMeForm | Usuario  | Te muestra el formulario para solicitar ayuda.
 /userindex/helpmeform/edit/:id |HelpMeFormEdit | Usuario | Te muestra el formulario para editar tu solicitud de ayuda o eliminarla. |
-/userindex/helpmeform/edit/:id | n/a           | Usuario | Elimina la ayuda solicitada. |
+
 
 
 ## Components:
@@ -56,22 +56,20 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 ## ServerRoutes (Back-end):
 **Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |     **Comportamiento**  |
 -----------|-----------------|----------------------|--------------------------|-------------------------|
-POST       | /auth/login      | {email. password}    |     200                  |  Autoriza al usuario para acceder  |                  
+POST       | /auth/login      | {email. password}    |     200                 |  Autoriza al usuario para acceder  |                  
 POST       | /auth/signup     | {username, email, password} | 201              |  Registra al usuario en la aplicación  |
-GET        | /helprequest     | {userId, title, description, city, [ message ]} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
+POST       | /auth/me         | {email, password}           | 200              | Comprueba que el usuario está logueado en la sesión.  |
+POST       | /auth/logout     |                             |    204       | Termina la sesión del usuario   |
+GET        | /helprequest     | {userId, title, description, city, [ helpMessages ]} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
 POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |  Envía los datos de contacto de la persona que ayuda al que ha solicitado dicha ayuda  |
 POST       | /helprequest     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
 PUT        | /helprequest/:id | { title, description, city }    |     201      | Modifica los datos de una solicitud de ayuda previa  |
-PUT        | /edituser/:id    | { userImage }                    |    201       | Modifica los datos del usuario  |
+PUT        | /users           | { userImage }                    |    201       | Modifica los datos del usuario  |
 POST       | /auth/logout     |                                 |    204       | Termina la sesión del usuario   |
 DELETE     | /helprequest/:id |                                  |   200       | Elimina una solicitud de ayuda previa |     
 
 
-Link a wireframes
-[Miro](https://miro.com/app/board/o9J_knOMXgU=/)
 
-Link a 
-[Trello](https://trello.com/b/BNeRcowY/memento-mori)
 
 
 
@@ -125,5 +123,6 @@ Link url al deploy:
 
 Link a 
 [Trello](https://trello.com/b/BNeRcowY/memento-mori)
+
 Link url a la presentación de slides:
 
