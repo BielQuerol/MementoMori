@@ -44,21 +44,19 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 
 
 ## ServerRoutes (Back-end):
-**Método** |  **URL**       |   **Request-Body**    |      **Succes Status** 
------------|-----------------|------------------|-------------------
-POST       | /auth/login         | {email. password}                     | 200     |
-
-POST       | auth/signup         | {username, email, password} | 201     |
-GET        | /user     |                                                  | 200     |
-POST       | /helpmeform     |{title, description, city}| 201   |
-GET        | /helpotherslist   |     {title, userId}                           | 200   |
-GET        | /helprequestdetails/:id | {userId, title, description, city} | 200  |
-GET        |/helperform/:id |   {id}                                         | 200  |
-POST       | /helperform/:id | {sender, senderTel, senderEmail, message } | 201   |
-   
-GET        | /helpmeform/:id | { | 200 |
-PUT        | /helpmeform/:id | {userId,title, description, city}|
-DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario. |
+**Método** |  **URL**       |   **Request-Body**    |      **Succes Status**   |
+-----------|-----------------|----------------------|--------------------------|
+POST       | /auth/login     | {email. password}    |     200                  |
+POST       | auth/signup     | {username, email, password} | 201               |
+GET        | /user           |                      |     200                  |
+POST       | /helpmeform     |{title, description, city} | 201                 |
+GET        | /helpotherslist |     {title, userId}  |     200                  |
+GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
+GET        |/helperform/:id  |   {id}               |                    200   |
+POST       | /helperform/:id | {sender, senderTel, senderEmail, message } | 201|
+GET        | /helpmeform/:id | {userId}                    | 200               |
+PUT        | /helpmeform/:id | {userId,title, description, city}|     201      |
+DELETE     | /helpmeform/:id | |
 GET        | /edituser/:id   | Renderiza la página del usuario para editarla |
 PUT        | /edituser/:id   | { userImage }                                                | 200      |
 POST       | auth/logout         |                                                          |  204   |
