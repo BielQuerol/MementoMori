@@ -26,7 +26,13 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 /userindex/:id |ShowUser        | Usuario         | Te muestra la página del usuario, link a solicitudes propias de ayuda, link a lista de solicitudes de ayuda de otros, link a editar perfil y link a logout |
 /userindex/edit/:id | EditUser  | Usuario         | Te muestra la página del perfil del usuario para editarla |
 /helpotherslist | HelpOthersList| Usuario         | Te muestra todas las solicitudes de ayuda de otros y link al detalle de cada una de ellas |
-/helpotherslist/:id | HelpOthersRequest | Usuario | Te muestra una solicitud de ayyuda de otra persona en particular, link a aceptar ayudarle |
+/helpothersrequest/:id | HelpOthersRequest | Usuario | Te muestra una solicitud de ayuda de otra persona en particular, link para aceptar ayudarle |
+/helpothersrequest/senderform/:id | SenderForm    |Usuario | Te muestra el formulario para poder ayudar a la persona que ha solicitado ayuda |
+/userindex/helpmeform/:id | HelpMeForm | Usuario  | Te muestra el formulario para solicitar ayuda.
+/userindex/helpmeform/edit/:id |HelpMeFormEdit | Usuario | Te muestra el formulario para editar tu solicitud de ayuda o eliminarla. |
+/userindex/helpmeform/edit/:id | HelpMe Form Delete | Usuario | Elimina la ayuda solicitada. |
+
+
 
 
 
@@ -38,26 +44,24 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 
 
 ## ServerRoutes (Back-end):
-**Método** |  **Ruta**       |   **Descripción**    |      **Request-Body** 
+**Método** |  **URL**       |   **Request-Body**    |      **Succes Status** 
 -----------|-----------------|------------------|-------------------
-GET        | /               | Renderiza la Homepage |
-GET        | /login          | Renderiza el formulario de login |
-POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
-GET        | /signup         | Renderiza el formulario de signup |
-POST       | /signup         | Envía los datos del formulario signup al servidor y te redirige a la página del usuario /userindex | {username, email, password, userImage} |
-GET        | /userindex      | Renderiza la página del usuario | 
-GET        | /helpmeform     | Renderiza el formulario de help request del usuario |                                       |
-POST       | /helpmeform     | Envía los datos del formulario helpme al servidor y te redirige a la página del usuario /userindex | {helpRequestTitle, helpRequestDescription, helpRequestCity}|
-GET        | /helpotherslist   | Renderiza la página con todas las solicitudes (help requests) de los usuarios |
-GET        | /helprequestdetails/:id | Renderiza una solicitud particular con sus detalles |
-GET        |/helperform/:id | Renderiza el formulario helperform |
-POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud help request y te redirige a la página de usuario /userindex |
-GET        | /helpmeform/:id | Renderiza el helpme form (help request solicitada por el propio usuario) para poder editarla o borrarla |
-PUT        | /helpmeform/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza, te redirige a la página del usuario /userindex | {helpRequestTitle, helpRequestDescription, helpRequestCity}|
+POST       | /auth/login         | {email. password}                     | 200     |
+
+POST       | auth/signup         | {username, email, password} | 201     |
+GET        | /user     |                                                  | 200     |
+POST       | /helpmeform     |{title, description, city}| 201   |
+GET        | /helpotherslist   |     {title, userId}                           | 200   |
+GET        | /helprequestdetails/:id | {userId, title, description, city} | 200  |
+GET        |/helperform/:id |   {id}                                         | 200  |
+POST       | /helperform/:id | {sender, senderTel, senderEmail, message } | 201   |
+   
+GET        | /helpmeform/:id | { | 200 |
+PUT        | /helpmeform/:id | {userId,title, description, city}|
 DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario. |
 GET        | /edituser/:id   | Renderiza la página del usuario para editarla |
-PUT        | /edituser/:id   | Actualiza la foto del usuario y te redirige a /userindex |
-POST       | /logout         | Actualiza el estado de la sesión y la destruye, te redirige a Homepage |
+PUT        | /edituser/:id   | { userImage }                                                | 200      |
+POST       | auth/logout         |                                                          |  204   |
 
 ## Routes (Front-end):
 
@@ -90,9 +94,9 @@ Link a
 
 {
 * userId: { type: Schema.Types.ObjectId, ref: 'User' },
-* helpRequestTitle: type String,
-* helpRequestDescription: type String,
-* helpRequestCity: type String,}
+* Title: type String,
+* Description: type String,
+* City: type String,}
 * helpMessages: [{
     sender: { type: Schema.Types.ObjectId, ref: "User"},
     senderTel: String,
