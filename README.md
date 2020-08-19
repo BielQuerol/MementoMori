@@ -61,9 +61,6 @@ GET        | /edituser/:id   | Renderiza la página del usuario para editarla   
 PUT        | /edituser/:id   | { userImage }                    |    200       |
 POST       | auth/logout     |                                  |    204       |
 
-## Routes (Front-end):
-
-**Método** | **Ruta**        |   Descripción   |       Request
 
 
 
@@ -80,18 +77,21 @@ Link a
 ## Modelos
 **Modelo User:**
 
-```` {
+```` 
+{
  userName : type String.
  email : type String.
  password: type String;
  userImage: type String,
  helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
  helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
+ }
  ````
 
 **Modelo HelpRequest:**
 
-```` {
+```` 
+{
 userId: { type: Schema.Types.ObjectId, ref: 'User' },
 title: type String,
 description: type String,
