@@ -30,10 +30,21 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 /helpothersrequest/senderform/:id | SenderForm    |Usuario | Te muestra el formulario para poder ayudar a la persona que ha solicitado ayuda |
 /userindex/helpmeform/:id | HelpMeForm | Usuario  | Te muestra el formulario para solicitar ayuda.
 /userindex/helpmeform/edit/:id |HelpMeFormEdit | Usuario | Te muestra el formulario para editar tu solicitud de ayuda o eliminarla. |
-/userindex/helpmeform/edit/:id | HelpMe Form Delete | Usuario | Elimina la ayuda solicitada. |
+/userindex/helpmeform/edit/:id | n/a           | Usuario | Elimina la ayuda solicitada. |
 
 
+## Components:
 
+* HomePage
+* SignupPage
+* LoginPage
+* ShowUser
+* EditUser
+* HelpOthersList
+* HelpOthersRequest
+* SenderForm
+* HelpMeForm
+* HelpMeFormEdit
 
 
 
@@ -48,7 +59,7 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 -----------|-----------------|----------------------|--------------------------|
 POST       | /auth/login     | {email. password}    |     200                  |
 POST       | auth/signup     | {username, email, password} | 201               |
-GET        | /user           |                      |     200                  |
+GET        | auth/user       |                      |     200                  |
 GET        | /helpotherslist |     {title, userId}  |     200                  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
 GET        |/helperform/:id  |   {id}               |                    200   |
@@ -104,7 +115,8 @@ helpMessages: [{
 ````
 
 
-## Backlog 
+## Backlog:
+
 
 
 ## Links
