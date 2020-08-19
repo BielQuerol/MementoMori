@@ -70,7 +70,7 @@ Link a
 
 ## Links
 
-* Link url to repository on github and deploy
+* Link url al repositorio de github y al deploy
 
-* Link url to Slides presentation
+* Link url a la presentación de slides
 
