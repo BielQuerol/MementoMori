@@ -14,9 +14,31 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 * **HelpOthersList**:Como usuario deseo poder ver todas las llamadas de ayuda solicitadas por los demás usuarios.
 * **HelpRequestDetails**:Como usuario deseo poder ver sobre qué trata cada solicitud de ayuda para decidir si quiero y puedo ayudar.
 
-## ServerRoutes (Back-end):
+## Client /Front-end:
 
-**Método** |  **Ruta**       |   Descripción    |      Request-Body 
+
+**Path** | **Component**        |   **Permisos**  |       **Comportamiento** |
+---------|----------------------|-----------------|--------------------------|
+/        | HomePage             | Anonymous only  | Homepage                 |
+/signup  | SignupPage           | Anon            | Formulario signup, link a login. Te dirige a userindex una vez registrado|
+/login   | LoginPage            | Anon            | Formulario login, link a signup. Te dirige a userindex una vez logueado.|
+/logout  | n/a                  | Usuario         | Te redirige a HomePage después del logout y termina la sesión |
+/userindex/:id |ShowUser        | Usuario         | Te muestra la página del usuario, link a solicitudes propias de ayuda, link a lista de solicitudes de ayuda de otros, link a editar perfil y link a logout |
+/userindex/edit/:id | EditUser  | Usuario         | Te muestra la página del perfil del usuario para editarla |
+/helpotherslist | HelpOthersList| Usuario         | Te muestra todas las solicitudes de ayuda de otros y link al detalle de cada una de ellas |
+/helpotherslist/:id | HelpOthersRequest | Usuario | Te muestra una solicitud de ayyuda de otra persona en particular, link a aceptar ayudarle |
+
+
+
+
+
+
+
+
+
+
+## ServerRoutes (Back-end):
+**Método** |  **Ruta**       |   **Descripción**    |      **Request-Body** 
 -----------|-----------------|------------------|-------------------
 GET        | /               | Renderiza la Homepage |
 GET        | /login          | Renderiza el formulario de login |
@@ -37,6 +59,9 @@ GET        | /edituser/:id   | Renderiza la página del usuario para editarla |
 PUT        | /edituser/:id   | Actualiza la foto del usuario y te redirige a /userindex |
 POST       | /logout         | Actualiza el estado de la sesión y la destruye, te redirige a Homepage |
 
+## Routes (Front-end):
+
+**Método** | **Ruta**        |   Descripción   |       Request
 
 
 
@@ -58,7 +83,8 @@ Link a
 * email : type String.
 * password: type String;
 * userImage: type String,
-* helpRequestId: { type: Schema.Types.ObjectId, ref: 'HelpRequest' }, }
+* helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
+* helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
 
 **Modelo HelpRequest:**
 
@@ -67,6 +93,11 @@ Link a
 * helpRequestTitle: type String,
 * helpRequestDescription: type String,
 * helpRequestCity: type String,}
+* helpMessages: [{
+    sender: { type: Schema.Types.ObjectId, ref: "User"},
+    senderTel: String,
+    senderEmail: String,
+    message: String}],}
 
 
 ## Backlog 
