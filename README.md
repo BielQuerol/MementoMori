@@ -81,12 +81,12 @@ Link a
 **Modelo User:**
 
     {
-* userName : type String.
-* email : type String.
-* password: type String;
-* userImage: type String,
-* helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
-* helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
+ userName : type String.
+ email : type String.
+ password: type String;
+ userImage: type String,
+ helpMeRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }],
+ helpOthersRequests: [ { type: Schema.Types.ObjectId, ref: "HelpRequest" }]
 
 **Modelo HelpRequest:**
 
