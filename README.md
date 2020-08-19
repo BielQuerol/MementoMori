@@ -80,7 +80,7 @@ Link a
 ## Modelos
 **Modelo User:**
 
-````{
+```` {
  userName : type String.
  email : type String.
  password: type String;
@@ -91,7 +91,7 @@ Link a
 
 **Modelo HelpRequest:**
 
-````{
+```` {
 userId: { type: Schema.Types.ObjectId, ref: 'User' },
 title: type String,
 description: type String,
