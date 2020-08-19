@@ -62,14 +62,14 @@ POST       | auth/signup     | {username, email, password} | 201               |
 GET        | auth/user       |                      |     200                  |
 GET        | /helpotherslist |     {title, userId}  |     200                  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
-GET        |/helperform/:id  |   {id}               |                    200   |
-POST       | /helperform/:id | {sender, senderTel, senderEmail, message } | 201|
+GET        |/helperform/:id  |   {userId}               |                200   |
+POST       | /helperform/:id | {sender, senderTel, senderEmail, message } |201 |
 GET        | /helpmeform/:id | {userId}                         | 200          |
 POST       | /helpmeform     |{title, description, city}        | 201          |
 PUT        | /helpmeform/:id | {userId,title, description, city}|     201      |
 DELETE     | /helpmeform/:id |                                  | 200          |
-GET        | /edituser/:id   | Renderiza la página del usuario para editarla   |
-PUT        | /edituser/:id   | { userImage }                    |    200       |
+GET        | /edituser/:id   | {userId}                         |    200       |
+PUT        | /edituser/:id   | { userImage }                    |    201       |
 POST       | auth/logout     |                                  |    204       |
 
 
