@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden pedir ayuda y ayudar a los demás. Para que esta red solidaria crezca se realiza de forma exponencial, es decir, por cada ayuda recibida debes ayudar a 3 usuarios.
+Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden pedir ayuda y ayudar a los demás. Para que esta red de apoyo crezca se realiza de forma exponencial, es decir, por cada ayuda recibida debes ayudar a 3 usuarios.
 
 ## User Stories
 * **Homepage**: Como usuario deseo encontrar una página donde hacer log in y sign up.
@@ -22,21 +22,21 @@ GET        | /               | Renderiza la HomePage |
 GET        | /login          | Renderiza el formulario de login |
 POST       | /login          | Envía los datos del formulario al servidor | {email. password} |
 GET        | /signup         | Renderiza el formulario de signup |
-POST       | /signup         | Envía los datos del formulario signup al servidor y te redirige a la página del usuario | {username, email, password, userImage} |
+POST       | /signup         | Envía los datos del formulario signup al servidor y te redirige a la página del usuario /userindex | {username, email, password, userImage} |
 GET        | /userindex      | Renderiza la página del usuario | 
 GET        | /helpmeform     | Renderiza el formulario de help request del usuario |                                       |
-POST       | /helpmeform     | Envía los datos del formulario helpme al servidor y te redirige a la página helprequests | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
+POST       | /helpmeform     | Envía los datos del formulario helpme al servidor y te redirige a la página del usuario /userindex | {helpRequestTitle, helpRequestDescription, helpRequestCity}|
 GET        | /helpotherslist   | Renderiza la página con todas las solicitudes (help requests) de los usuarios |
 GET        | /helprequestdetails/:id | Renderiza una solicitud particular con sus detalles |
 GET        |/helperform/:id | Renderiza el formulario helperform |
-POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud help request y te redirige a la página userindex |
+POST       | /helperform/:id | Envía los datos del formulario helperform al user que ha realizado la solicitud help request y te redirige a la página de usuario /userindex |
 GET        | /helpmeform/:id | Renderiza el helpme form (help request solicitada por el propio usuario) para poder editarla o borrarla |
-PUT        | /helpmeform/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza | {helpRequestTitle, helpRequestDescription, helpRequestTime}|
+PUT        | /helpmeform/:id | Envía los datos modificados del formulario helpme al servidor y los actualiza, te redirige a la página del usuario /userindex | {helpRequestTitle, helpRequestDescription, helpRequestCity}|
 DELETE     | /helpmeform/:id | Borra la help request solicitada anteriormente por el usuario.
 
 
 
-Link a wireframes 
+Link a wireframes
 [Miro](https://miro.com/app/board/o9J_knOMXgU=/)
 
 Link a 
@@ -62,7 +62,7 @@ Link a
 * userId: { type: Schema.Types.ObjectId, ref: 'User' },
 * helpRequestTitle: type String,
 * helpRequestDescription: type String,
-* helpRequestTime: type Number,}
+* helpRequestCity: type String,}
 
 
 ## Backlog 
