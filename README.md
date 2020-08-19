@@ -49,17 +49,17 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 POST       | /auth/login     | {email. password}    |     200                  |
 POST       | auth/signup     | {username, email, password} | 201               |
 GET        | /user           |                      |     200                  |
-POST       | /helpmeform     |{title, description, city} | 201                 |
 GET        | /helpotherslist |     {title, userId}  |     200                  |
 GET        | /helprequestdetails/:id | {userId, title, description, city} | 200|
 GET        |/helperform/:id  |   {id}               |                    200   |
 POST       | /helperform/:id | {sender, senderTel, senderEmail, message } | 201|
-GET        | /helpmeform/:id | {userId}                    | 200               |
+GET        | /helpmeform/:id | {userId}                         | 200          |
+POST       | /helpmeform     |{title, description, city}        | 201          |
 PUT        | /helpmeform/:id | {userId,title, description, city}|     201      |
-DELETE     | /helpmeform/:id | |
-GET        | /edituser/:id   | Renderiza la página del usuario para editarla |
-PUT        | /edituser/:id   | { userImage }                                                | 200      |
-POST       | auth/logout         |                                                          |  204   |
+DELETE     | /helpmeform/:id |                                  | 200          |
+GET        | /edituser/:id   | Renderiza la página del usuario para editarla   |
+PUT        | /edituser/:id   | { userImage }                    |    200       |
+POST       | auth/logout     |                                  |    204       |
 
 ## Routes (Front-end):
 
@@ -80,7 +80,7 @@ Link a
 ## Modelos
 **Modelo User:**
 
-{
+    {
 * userName : type String.
 * email : type String.
 * password: type String;
@@ -90,7 +90,7 @@ Link a
 
 **Modelo HelpRequest:**
 
-{
+    {
 * userId: { type: Schema.Types.ObjectId, ref: 'User' },
 * Title: type String,
 * Description: type String,
