@@ -59,13 +59,14 @@ Memento Mori es una aplicación web de apoyo mutuo donde los usuarios pueden ped
 POST       | /auth/login      | {email. password}    |     200                 |  Autoriza al usuario para acceder  |                  
 POST       | /auth/signup     | {username, email, password} | 201              |  Registra al usuario en la aplicación  |
 POST       | /auth/me         | {email, password}           | 200              | Comprueba que el usuario está logueado en la sesión.  |
-POST       | /auth/logout     |                             |    204       | Termina la sesión del usuario   |
-GET        | /helprequest     | {userId, title, description, city, [ helpMessages ]} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
-POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |  Envía los datos de contacto de la persona que ayuda al que ha solicitado dicha ayuda  |
-POST       | /helprequest     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
-PUT        | /helprequest/:id | { title, description, city }    |     201      | Modifica los datos de una solicitud de ayuda previa  |
-PUT        | /users           | { userImage }                    |    201       | Modifica los datos del usuario  |
-DELETE     | /helprequest/:id |                                  |   200       | Elimina una solicitud de ayuda previa |     
+POST       | /auth/logout     |                             |    204           | Termina la sesión del usuario   |
+GET        | /api/helprequest |                             |     200          | Muestra todas las solicitudes de ayuda            |
+GET        | /api/helprequest/:id     | {userId, title, description, city, [ helpMessages ]} | 200|  Muestra los datos de una solicitud de ayuda en particular  |
+POST       | /api/sendhelpform/:id | {sender, senderTel, senderEmail, message } |201 |  Envía los datos de contacto de la persona que ayuda al que ha solicitado dicha ayuda  |
+POST       | /api/helprequest     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
+PUT        | /api/helprequest/:id | { title, description, city }    |     201      | Modifica los datos de una solicitud de ayuda previa  |
+PUT        | /api/users           | { userImage }                    |    201       | Modifica los datos del usuario  |
+DELETE     | /api/helprequest/:id |                                  |   200       | Elimina una solicitud de ayuda previa |     
 
 
 
