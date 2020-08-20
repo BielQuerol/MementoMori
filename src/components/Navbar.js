@@ -14,7 +14,7 @@ class Navbar extends Component {
           isLoggedin ? 
           (
           <>
-            <p className='navbar-user'>username: {user.username}</p>
+            <p className='navbar-user'>email: {user.email}</p>
             <button className='navbar-button' onClick={logout}>Logout</button>
           </>
         ) : (
