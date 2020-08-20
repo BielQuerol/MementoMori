@@ -65,7 +65,6 @@ POST       | /sendhelpform/:id | {sender, senderTel, senderEmail, message } |201
 POST       | /helprequest     |{title, description, city}        | 201          | Crea la solicitud de ayuda   |
 PUT        | /helprequest/:id | { title, description, city }    |     201      | Modifica los datos de una solicitud de ayuda previa  |
 PUT        | /users           | { userImage }                    |    201       | Modifica los datos del usuario  |
-POST       | /auth/logout     |                                 |    204       | Termina la sesión del usuario   |
 DELETE     | /helprequest/:id |                                  |   200       | Elimina una solicitud de ayuda previa |     
 
 
