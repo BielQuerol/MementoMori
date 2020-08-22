@@ -29,3 +29,12 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+.btngrey  {
+  padding: 5px 20px;
+  border-radius: 4px;
+  width: 100px;
+  color:grey;
+  margin: 0 10px;
+
+
+}

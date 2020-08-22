@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { withAuth } from "../lib/AuthProvider";
 class HelpMeForm extends Component {
   constructor(props) {
     super(props);
@@ -58,4 +58,4 @@ class HelpMeForm extends Component {
     );
   }
 }
-export default HelpMeForm;
+export default withAuth(HelpMeForm);

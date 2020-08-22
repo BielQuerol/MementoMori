@@ -9,7 +9,10 @@ import Login from "./pages/Login";
 import Private from "./pages/Private";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
-import HelpMeForm from "./components/helprequests/helpmeform"
+import UserIndex from "./pages/Userindex";
+import HelpMeForm from "./pages/helpmeform";
+import HelpOthersList from "./pages/helpotherslist";
+import HelpOthersDetail from "./pages/helpothersdetail";
 //`Context.Provider`
 //El valor dentro de `<Provider  value={/* some value */}/>` estará disponible para todos los components `<Consumer>`
 //Importamos `AuthProvider` en `App.js` y envolvemos todo el component (a fin de que comparta el contexto)
@@ -31,7 +34,11 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
-         <HelpMeForm />
+         <Route exact path="/userindex" component={UserIndex} />
+         <Route exact path="/helprequest" component={HelpOthersList}/>
+         <Route  exact path="/helpmeform" component={HelpMeForm} />
+         <Route exact path="helpothersdetail" component={HelpOthersDetail} />
+         
           </Switch>
         </div>
       </AuthProvider>
