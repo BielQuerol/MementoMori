@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import { Link } from "react-router-dom";
-import axiosRequestFunctions from "../lib/auth-service";
+import axios from "axios";
+import service from "../api/service";
 
 class EditUser extends Component {
   constructor(props) {
@@ -13,72 +14,84 @@ class EditUser extends Component {
     };
   }
 
-  handleFormSubmit = event => {
-  const email = this.state.email;
-  const password = this.state.password;
-  const userImage = this.state.userImage;
+  handleFormSubmit = (event) => {
+    const email = this.state.email;
+    const password = this.state.password;
+    const userImage = this.state.userImage;
 
-  event.preventDefault();
+    event.preventDefault();
 
-  axios
-    .put(`http://localhost:4000/api/users/${this.props.theUser._id}`, {
+    axios
+      .put(`http://localhost:4000/api/users/${this.props.theUser._id}`, {
         email,
         password,
-        userImage
-        
-    })
-    .then(() => {
+        userImage,
+      })
+      .then(() => {
         this.props.history.push("/userindex/edit");
-    })
-    .catch(error => console.log(error));
-};
+      })
+      .catch((error) => console.log(error));
+  };
 
-handleChangeEmail = event => {
+  handleChangeEmail = (event) => {
     this.setState({
-        email: event.target.value
+      email: event.target.value,
     });
-};
+  };
 
-handleChangePassword = event => {
+  handleChangePassword = (event) => {
     this.setState({
-        password: event.target.value
+      password: event.target.value,
     });
-};
+  };
 
-handleFileUpload = event => {
+  handleFileUpload = (event) => {
+    console.log("The file to be uploaded is: ", event.target.files[0]);
+    const uploadData = new FormData();
+    uploadData.append("userImage", event.target.files[0]);
 
-const uploadData = new FormData();
-uploadData.append("userImage", e.target.files[0]);
-service.handleUpload(uploadData)
-        .then(response => {
-this.setState({ userImage: response.secure_url });
-          })
-          .catch(err => {
-            console.log("Error while uploading the file: ", err);
-          });
-    };
+    service
+      .handleUpload(uploadData)
+      .then((response) => {
+        this.setState({ userImage: response.secure_url });
+      })
+      .catch((err) => {
+        console.log("Error while uploading the file: ", err);
+      });
+  };
 
-
-render() {
-return (
-    <div>
-    <h2>Edit profile</h2>
-    <form on Submit={this.handleFormSubmit}>
-    <label>Email:</label>
-    <input type="text" name="email" value={this.state.email}
-    onChange={e => this.handleChangeEmail(e)}/>
-    <label>Password:</label>
-    <input type="text" name="password" value={this.state.password}
-    onChange={e => this.handleChangePassword(e)}/>
-     <label>Profile Picture</label>
-     <input type="file" name="userImage" value={this.state.userImage}
-                    onChange={(e) => this.handleFileUpload(e)} /> 
-                <button type="submit">Save new image</button>
-            </form>
-          </div>
-
-    
-)
-};
+  render() {
+    return (
+      <div>
+        <div className="wrapform">
+          <h2>Edit profile</h2>
+          <form on Submit={this.handleFormSubmit}>
+            <label>Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={(e) => this.handleChangeEmail(e)}
+            />
+            <label>Password:</label>
+            <input
+              type="text"
+              name="password"
+              value={this.state.password}
+              onChange={(e) => this.handleChangePassword(e)}
+            />
+            <label>Profile Picture</label>
+            <input
+              type="file"
+              name="userImage"
+              value={this.state.userImage}
+              onChange={(e) => this.handleFileUpload(e)}
+            />
+            <button type="submit">Save new image</button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
-export default withAuth (EditUser);
+export default withAuth(EditUser);

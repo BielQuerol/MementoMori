@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-
+import "./login.css";
 class Login extends Component {
   state = { email: "", password: "" };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
     //console.log('Login -> form submit', { username, password });
     this.props.login({ email, password });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -21,16 +21,24 @@ class Login extends Component {
 
     return (
       <div>
+        
+
+        <form className="box" onSubmit={this.handleFormSubmit}>
         <h1>Login</h1>
-
-        <form onSubmit={this.handleFormSubmit}>
-          
-          <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange}/>
-
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
-
+          <input
+            type="text"
+            name="email"
+            placeholder="youremail@whatever.com"
+            value={email}
+            onChange={this.handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="your password"
+            value={password}
+            onChange={this.handleChange}
+          />
           <input type="submit" value="Login" />
         </form>
       </div>

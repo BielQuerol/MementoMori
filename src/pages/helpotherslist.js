@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import HelpMeForm from "../pages/helpmeform";
-import { render } from "@testing-library/react";
+
 
 class HelpOthersList extends Component {
     constructor() {
@@ -28,13 +28,13 @@ class HelpOthersList extends Component {
     return (
         <div>
             <div>
-                {this.state.listOfHelpRequests.map(helprequest => {
+                {this.state.listOfHelpRequests.map(eachHelpRequest => {
                     return (
-                        <div key={helprequest._id}>
-                        <Link to={`/helprequest/${helprequest._id}`}>
-                            <h3>{helprequest.title}</h3>
+                        <div key={eachHelpRequest._id}>
+                        <Link to={`/helprequest/${HelpRequest._id}`}>
+                            <h3>{eachHelpRequest.title}</h3>
                         </Link>
-                        <p>{helprequest.city}</p>
+                        <p>{eachHelpRequest.city}</p>
                         </div>
                     );
                 })}

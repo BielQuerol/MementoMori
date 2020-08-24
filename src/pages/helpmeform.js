@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "../lib/AuthProvider";
+import "./helpmeform.css";
+
 class HelpMeForm extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class HelpMeForm extends Component {
     const description = this.state.description;
     const city = this.state.city;
     axios
-      .post("http://localhost:4000/api/sendhelpform/:id", {
+      .post("http://localhost:4000/api/helprequest", {
         title,
         description,
         city,
@@ -32,6 +34,8 @@ class HelpMeForm extends Component {
   render() {
     return (
       <div>
+      <div className="wrapform">
+      <h2>Help me form</h2>
         <form onSubmit={this.handleFormSubmit}>
           <label>Title:</label>
           <input
@@ -53,7 +57,7 @@ class HelpMeForm extends Component {
           />
 
           <input type="submit" value="Submit" />
-        </form>
+        </form></div>
       </div>
     );
   }

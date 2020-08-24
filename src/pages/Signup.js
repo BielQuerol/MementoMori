@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider"
+import "./Signup.css";
+
 class Signup extends Component {
   state = { email: "", password: "" };
 
@@ -20,21 +22,22 @@ class Signup extends Component {
     const { email, password } = this.state;
     return (
       <div>
+      
+
+        <form className="box" onSubmit={this.handleFormSubmit}>
         <h1>Sign Up</h1>
+        
+          <input type="text" name="email" placeholder="youremail@whatever.com" value={email} onChange={this.handleChange} />
 
-        <form onSubmit={this.handleFormSubmit}>
-
-          <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange} />
-
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+        
+          <input type="password" name="password" placeholder="your password" value={password} onChange={this.handleChange} />
 
           <input type="submit" value="Signup" />
-        </form>
         
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        
+        <p>Already have an account?</p>
+        <Link style={{ textDecoration: 'none' }} to={"/login"}> Login</Link>
+        </form>
       </div>
     );
   }
