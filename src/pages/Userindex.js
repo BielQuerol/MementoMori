@@ -34,14 +34,15 @@ class UserIndex extends Component {
           </button>
         </Link></div>
         <div className="useritem">
-        <Link style={{ textDecoration: 'none' }} to="/logout">
-          <button className="btngrey">
+        
+          <button className="btngrey" onClick= {this.props.logout}>
             <h2>Log out</h2>
           </button>
-        </Link>
+        
       </div></div></div>
     );
   }
 }
 
 export default withAuth (UserIndex);
+

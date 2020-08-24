@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import SenderForm from "./Senderform"
-
+import "./helpothersdetail.css"
 class HelpOthersDetail extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +15,13 @@ class HelpOthersDetail extends Component {
   }
 
   getSingleHelpRequest = () => {
+console.log("Aquí", this.props)
     const { params } = this.props.match;
+    //el id de URL vendrá de this.props.match.params.requestId
     axios
-      .get(`http://localhost:4000/api/helprequest/${params.id}`)
+      .get(`http://localhost:4000/api/helprequest/${params.requestId}`, {withCredentials: true})
       .then((responseFromApi) => {
+        console.log(responseFromApi)
         const theHelpRequest = responseFromApi.data;
         this.setState(theHelpRequest);
       })
@@ -39,8 +42,8 @@ class HelpOthersDetail extends Component {
         <div className="card-body">
         <p>{this.state.description}</p></div>
         <div className="card-bottom"><p>{this.state.city}</p></div>
-        <Link to={"/helpotherslist"}>Back to help requests list</Link>
-        <Link to={"/helpothersdetail/senderform"}>
+        <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}>Back to help requests list</Link>
+        <Link style={{ textDecoration: "none" }} to={"/helpothersdetail/senderform"}>
           <button className="btngrey">I can help</button>
         </Link>
       </div>

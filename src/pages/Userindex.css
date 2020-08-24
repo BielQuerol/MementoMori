@@ -6,5 +6,7 @@
 }
 .useritem {
   margin: 1rem;
+}
+.btngrey {
   cursor: pointer;
 }

@@ -33,7 +33,11 @@ const withAuth = (WrappedComponent) => {
 
 //Provider
 class AuthProvider extends React.Component {
-  state = { isLoggedin: false, user: null, isLoading: true };
+  state = { 
+    isLoggedin: false,
+    user: null,
+    isLoading: true 
+  };
 
   componentDidMount() {
     auth

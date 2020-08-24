@@ -9,9 +9,9 @@ class HomePage extends Component {
         <Navbar />
         <div className="startbox">
           <div className="secondbox">
-            <h2>Memento Mori</h2>
+            <h1>Memento Mori</h1>
             <div className="itembox">
-              <p> Welcome to Memento Mori. The webpage to help each other.</p>
+              <h4> Welcome to Memento Mori. The webpage to help each other.</h4>
             </div>
           </div>
         </div>

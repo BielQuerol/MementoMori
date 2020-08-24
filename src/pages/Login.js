@@ -21,10 +21,8 @@ class Login extends Component {
 
     return (
       <div>
-        
-
         <form className="box" onSubmit={this.handleFormSubmit}>
-        <h1>Login</h1>
+          <h1>Login</h1>
           <input
             type="text"
             name="email"

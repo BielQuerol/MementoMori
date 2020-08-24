@@ -7,15 +7,17 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-      
-        <Link style={{ textDecoration: 'none'}} to="/login">
-          <button className="btngrey btnavbar">Login</button>
+        <Link style={{ textDecoration: "none" }} to="/login">
+          <button className="btngrey btnavbar">
+            <h2>Login</h2>
+          </button>
         </Link>
         <br />
-        <Link style={{ textDecoration: 'none' }} to="/signup">
-          <button className="btngrey btnavbar">Sign Up</button>
+        <Link style={{ textDecoration: "none" }} to="/signup">
+          <button className="btngrey btnavbar">
+            <h2>Sign Up</h2>
+          </button>
         </Link>
-        
       </nav>
     );
   }

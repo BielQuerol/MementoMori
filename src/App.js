@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -35,16 +34,15 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/userindex" component={UserIndex} />
-            <Route exact path="/userindex/edit" component={EditUser} />
-            <Route exact path="/userindex/helpmeform" component={HelpMeForm} />
-            <Route exact path="/userindex/helpmeform/edit" component={HelpMeFormEdit} />
-            <Route exact path="/helpotherslist" component={HelpOthersList} />
-            <Route exact path="/helpothersdetail/senderform" component={SenderForm} />
-            <Route exact path="/helpothersdetail" component={HelpOthersDetail} />
-            
-          </Switch>
+            <AnonRoute exact path="/" component={HomePage} />
+            <PrivateRoute exact path="/userindex" component={UserIndex} />
+            <PrivateRoute exact path="/userindex/edit" component={EditUser} />
+            <PrivateRoute exact path="/userindex/helpmeform" component={HelpMeForm} />
+            <PrivateRoute exact path="/userindex/helpmeform/edit" component={HelpMeFormEdit} />
+            <PrivateRoute exact path="/helpotherslist" component={HelpOthersList} />
+            <PrivateRoute exact path="/helpothersdetail/:requestId" component={HelpOthersDetail} />
+            <PrivateRoute exact path="/helpothersdetail/senderform" component={SenderForm} />
+            </Switch>
         </div>
       </AuthProvider>
     );
