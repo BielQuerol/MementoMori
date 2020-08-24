@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import "./helpotherslist.css";
+import "./Helpotherslist.css";
 
 class HelpOthersList extends Component {
   constructor() {
@@ -14,6 +14,7 @@ class HelpOthersList extends Component {
     axios
       .get(`http://localhost:4000/api/helprequest`, {withCredentials: true})
       .then((responseFromApi) => {
+        const reverseList = responseFromApi.data.reverse()
         this.setState({
           listOfHelpRequests: responseFromApi.data,
         });
@@ -38,7 +39,7 @@ class HelpOthersList extends Component {
                           <Link style={{ textDecoration: "none" }} to={`/helpothersdetail/${helprequest._id}`}>
                       
                           <div className="card-header">
-                          <h2>{helprequest.title}</h2></div>
+                          <h3>{helprequest.title}</h3></div>
                           </Link>
                         
                         <div className="card-body">

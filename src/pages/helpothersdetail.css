@@ -33,7 +33,7 @@ body {
 .card-header {
   text-align: center;
   padding: 50px 10pz;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: #5f7a6e;
   color: #fff;
 }
 .card-body {
@@ -45,7 +45,7 @@ body {
   display: block;
   color: #fff;
   text-align: center;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: #5f7a6e;
   margin-top: 30px;
   text-decoration: none;
   padding: 10px;

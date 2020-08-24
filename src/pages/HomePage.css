@@ -1,3 +1,7 @@
+body   {
+  background-image: url("../images/memento2.png");
+}
+
 .startbox {
   display: flex;
   justify-content: center;
@@ -16,3 +20,4 @@
   padding: 10px;
   border-radius: 18px;
 }
+

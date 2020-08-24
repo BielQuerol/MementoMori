@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import SenderForm from "./Senderform"
-import "./helpothersdetail.css"
+import "./Helpothersdetail.css"
 class HelpOthersDetail extends Component {
   constructor(props) {
     super(props);
@@ -42,12 +42,12 @@ console.log("Aquí", this.props)
         <div className="card-body">
         <p>{this.state.description}</p></div>
         <div className="card-bottom"><p>{this.state.city}</p></div>
-        <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}>Back to help requests list</Link>
+       
         <Link style={{ textDecoration: "none" }} to={"/helpothersdetail/senderform"}>
           <button className="btngrey">I can help</button>
         </Link>
       </div>
-      </div>
+      </div> <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}>Back to help requests list</Link>
       </div></div></div>
     );
   }

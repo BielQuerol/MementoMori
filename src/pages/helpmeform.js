@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withAuth } from "../lib/AuthProvider";
-import "./helpmeform.css";
+import "./Helpmeform.css";
 
 class HelpMeForm extends Component {
   constructor(props) {
@@ -15,14 +15,14 @@ class HelpMeForm extends Component {
     const description = this.state.description;
     const city = this.state.city;
     axios
-      .post("http://localhost:4000/api/helprequest", {
+      .post("http://localhost:4000/api/helprequest",  {
         title,
         description,
         city,
-      })
+      },    {withCredentials: true})
       .then(() => {
-            // this.props.getData();
-        this.setState({ title: "", description: "", city: "" });
+      this.props.history.push("/userindex")
+      
       })
       .catch((error) => console.log(error));
   };

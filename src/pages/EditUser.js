@@ -8,10 +8,20 @@ class EditUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: this.props.theUser.email,
-      password: this.props.theUser.password,
-      userImage: this.props.theUser.userImage,
+      email: "",
+      password: "",
+      userImage: "",
     };
+  }
+  componentDidMount() {
+    axios
+    .get(`http://localhost:4000/api/user`)
+    .then((response) => {
+      const user = response.data
+      this.setState (user)
+    }).catch((err) => {
+      
+    });
   }
 
   handleFormSubmit = (event) => {
@@ -87,7 +97,7 @@ class EditUser extends Component {
               value={this.state.userImage}
               onChange={(e) => this.handleFileUpload(e)}
             />
-            <button type="submit">Save new image</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>

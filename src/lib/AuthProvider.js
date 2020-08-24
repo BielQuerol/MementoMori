@@ -63,7 +63,7 @@ class AuthProvider extends React.Component {
 
       auth.login({ email, password })
         .then((user) => this.setState({ isLoggedin: true, user }))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err , "Email or password are incorrect"));
   };
 
   logout = () => {

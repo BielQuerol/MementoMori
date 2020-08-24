@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import HelpMeForm from "./helpmeform";
-import "./helpmeformedit.css";
+import HelpMeForm from "./Helpmeform";
+import "./Helpmeformedit.css";
 
 class HelpMeFormEdit extends Component {
   constructor(props) {
@@ -23,14 +23,11 @@ class HelpMeFormEdit extends Component {
     event.preventDefault();
 
     axios
-      .put(
-        `http://localhost:4000//api/helprequest/${this.props.theHelpRequest._id}`,
-        {
+    .put(`http://localhost:4000//api/helprequest/${this.props.theHelpRequest._id}`, {withCredentials: true} ,{
           title,
           description,
           city,
-        }
-      )
+        })
       .then(() => {
         this.props.getTheHelpRequest();
         this.props.history.push("/helpotherslist");
@@ -58,8 +55,9 @@ class HelpMeFormEdit extends Component {
   // DELETE PROJECT:
   deleteHelpRequest = () => {
     const { params } = this.props.match;
+    
     axios
-      .delete(`http://localhost:4000/api/helprequest/${params.id}`)
+      .delete(`http://localhost:4000/api/helprequest/${params.id}`,{withCredentials: true} )
       .then(() => {
         this.props.history.push("/helpotherslist");
       })

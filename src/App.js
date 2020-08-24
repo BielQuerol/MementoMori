@@ -9,12 +9,12 @@ import Private from "./pages/Private";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import UserIndex from "./pages/Userindex";
-import HelpMeForm from "./pages/helpmeform";
-import HelpOthersList from "./pages/helpotherslist";
-import HelpOthersDetail from "./pages/helpothersdetail";
+import HelpMeForm from "./pages/Helpmeform";
+import HelpOthersList from "./pages/Helpotherslist";
+import HelpOthersDetail from "./pages/Helpothersdetail";
 import EditUser from "./pages/EditUser";
 import SenderForm from "./pages/Senderform";
-import HelpMeFormEdit from "./pages/helpmeformedit";
+import HelpMeFormEdit from "./pages/Helpmeformedit";
 //`Context.Provider`
 //El valor dentro de `<Provider  value={/* some value */}/>` estará disponible para todos los components `<Consumer>`
 //Importamos `AuthProvider` en `App.js` y envolvemos todo el component (a fin de que comparta el contexto)

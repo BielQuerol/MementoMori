@@ -15,9 +15,9 @@ class SenderForm extends Component {
     const description = this.state.description;
     const city = this.state.city;
     const helprequestID = this.props.theHelpRequest._id;
-
+    const { params } = this.props.match;
     axios
-      .post("http://localhost:4000/api/sendhelpform/${params", {
+      .post(`http://localhost:4000/api/sendhelpform/${params.requestId}`, {withCredentials: true} , {
         title,
         description,
         city,
