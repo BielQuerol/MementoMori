@@ -6,26 +6,28 @@ import { Link } from "react-router-dom";
 class SenderForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { title: "", description: "", isShowing: false };
+    this.state = { senderTel: "",
+      senderEmail: "",
+      message: ""};
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const title = this.state.title;
-    const description = this.state.description;
-    const city = this.state.city;
-    const helprequestID = this.props.theHelpRequest._id;
+    const senderTel = this.state.senderTel;
+    const senderEmail = this.state.senderEmail;
+    const message = this.state.message;
+    
     const { params } = this.props.match;
+    const helprequestID = this.props.requestId;
     axios
-      .post(`http://localhost:4000/api/sendhelpform/${params.requestId}`, {withCredentials: true} , {
-        title,
-        description,
-        city,
-        helprequestID,
-      })
+      .post(`${process.env.REACT_APP_API_URI}/api/sendhelpform/${params.requestId}`, {
+       senderTel,
+       senderEmail,
+       message,
+      }, {withCredentials: true})
       .then(() => {
-        this.props.getTheHelpRequest();
-        this.setState({ title: "", description: "", city: "" });
+        
+      this.props.history.push(`/userindex`);
       })
       .catch((error) => console.log(error));
   };
@@ -37,8 +39,9 @@ class SenderForm extends Component {
   render() {
     return (
       <div>
+      <div className="wrapform">
         <h2>Sender Form</h2>
-        <form on Submit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmit}>
           <label>Title:</label>
           <input
             type="text"
@@ -72,7 +75,7 @@ class SenderForm extends Component {
 
           <input type="submit" value="submit" />
         </form>
-      </div>
+      </div></div>
     );
   }
 }

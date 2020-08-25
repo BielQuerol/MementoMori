@@ -15,7 +15,7 @@ class HelpMeForm extends Component {
     const description = this.state.description;
     const city = this.state.city;
     axios
-      .post("http://localhost:4000/api/helprequest",  {
+      .post(`${process.env.REACT_APP_API_URI}/api/helprequest`,  {
         title,
         description,
         city,

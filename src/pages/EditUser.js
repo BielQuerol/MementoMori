@@ -15,7 +15,7 @@ class EditUser extends Component {
   }
   componentDidMount() {
     axios
-    .get(`http://localhost:4000/api/user`)
+    .get(`${process.env.REACT_APP_API_URI}/api/user`)
     .then((response) => {
       const user = response.data
       this.setState (user)
@@ -32,7 +32,7 @@ class EditUser extends Component {
     event.preventDefault();
 
     axios
-      .put(`http://localhost:4000/api/users/${this.props.theUser._id}`, {
+      .put(`${process.env.REACT_APP_API_URI}/api/users/${this.props.theUser._id}`, {
         email,
         password,
         userImage,
@@ -97,10 +97,11 @@ class EditUser extends Component {
               value={this.state.userImage}
               onChange={(e) => this.handleFileUpload(e)}
             />
-            <button type="submit">Submit</button>
+            <input type="submit" value="submit" />
           </form>
-        </div>
-      </div>
+        </div> <Link style={{ textDecoration: "none" }} to={`/userindex/profile`}>
+          <button className="btngrey"><h2>Profile</h2></button></Link></div>
+      
     );
   }
 }

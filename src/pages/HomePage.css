@@ -9,15 +9,19 @@ body   {
   align-items: center;
 }
 .secondbox {
-  margin-top: 55rem;
+  margin-top: 3rem;
   width: 500px;
   height: 500px;
   margin: 5px;
 }
 .itembox {
-  margin-top: 15rem;
+  margin-top: 5rem;
   border: 2px solid #5f7a6e;
   padding: 10px;
   border-radius: 18px;
 }
+
+.itembox h4 {
+  color:#5f7a6e;
+} 
 

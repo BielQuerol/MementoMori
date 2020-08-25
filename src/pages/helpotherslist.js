@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import "./Helpotherslist.css";
-
+import SearchBar from "../components/Searchbar"
 class HelpOthersList extends Component {
   constructor() {
     super();
@@ -12,7 +12,7 @@ class HelpOthersList extends Component {
 
   getAllHelpRequests = () => {
     axios
-      .get(`http://localhost:4000/api/helprequest`, {withCredentials: true})
+      .get(`${process.env.REACT_APP_API_URI}/api/helprequest`, {withCredentials: true})
       .then((responseFromApi) => {
         const reverseList = responseFromApi.data.reverse()
         this.setState({
@@ -27,6 +27,7 @@ class HelpOthersList extends Component {
   render() {
     return (
       <div>
+      <SearchBar/>
         <div>
           {this.state.listOfHelpRequests.map((helprequest) => {
             return (

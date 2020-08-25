@@ -9,9 +9,9 @@ class HelpMeFormEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.theHelpRequest.title,
-      description: this.props.theHelpRequest.description,
-      city: this.props.theHelpRequest.city,
+      title: this.props.title,
+      description: this.props.description,
+      city: this.props.city,
     };
   }
 
@@ -21,15 +21,15 @@ class HelpMeFormEdit extends Component {
     const city = this.state.city;
 
     event.preventDefault();
-
+    const { params } = this.props.match;
     axios
-    .put(`http://localhost:4000//api/helprequest/${this.props.theHelpRequest._id}`, {withCredentials: true} ,{
+    .put(`${process.env.REACT_APP_API_URI}/api/helprequest/${params.requestId}`, {
           title,
           description,
           city,
-        })
+        } , {withCredentials: true})
       .then(() => {
-        this.props.getTheHelpRequest();
+       
         this.props.history.push("/helpotherslist");
       })
       .catch((error) => console.log(error));
@@ -57,7 +57,7 @@ class HelpMeFormEdit extends Component {
     const { params } = this.props.match;
     
     axios
-      .delete(`http://localhost:4000/api/helprequest/${params.id}`,{withCredentials: true} )
+      .delete(`${process.env.REACT_APP_API_URI}/api/helprequest/${params.id}`,{withCredentials: true} )
       .then(() => {
         this.props.history.push("/helpotherslist");
       })
@@ -68,10 +68,8 @@ class HelpMeFormEdit extends Component {
   render() {
     return (
       <div>
-        <hr />
         <div className="wrapform">
-          <h3>Edit form</h3>
-          <h3>Edit form</h3>
+          <h2>Edit form</h2>
           <form onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
             <input
@@ -84,25 +82,25 @@ class HelpMeFormEdit extends Component {
             <textarea
               name="description"
               value={this.state.description}
-              onChange={(e) => this.handleChangeDesc(e)}
+              onChange={(e) => this.handleChangeDescription(e)}
             />
             <label>City:</label>
             <input
               type="text"
               name="city"
-              value={this.state.description}
-              onChange={(e) => this.handleChangeDesc(e)}
+              value={this.state.city}
+              onChange={(e) => this.handleChangeCity(e)}
             />
-            <input type="submit" value="Submit" />
+            <h2><input type="submit" value="Submit" /></h2>
           </form>
         </div>
 
         <button className="btngrey" onClick={() => this.deleteHelpRequest()}>
-          Delete Help Request
+         <h2>Delete</h2>
         </button>
         <br />
         <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}>
-          Back to help requests
+        <button className="btngrey"><h2>Help requests</h2></button>
         </Link>
       </div>
     );

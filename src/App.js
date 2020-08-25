@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
-
+import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -15,6 +15,7 @@ import HelpOthersDetail from "./pages/Helpothersdetail";
 import EditUser from "./pages/EditUser";
 import SenderForm from "./pages/Senderform";
 import HelpMeFormEdit from "./pages/Helpmeformedit";
+import Userprofile from "./pages/Userprofile";
 //`Context.Provider`
 //El valor dentro de `<Provider  value={/* some value */}/>` estará disponible para todos los components `<Consumer>`
 //Importamos `AuthProvider` en `App.js` y envolvemos todo el component (a fin de que comparta el contexto)
@@ -30,6 +31,7 @@ class App extends Component {
         }
         <div className="container">
           <h1>Memento Mori</h1>
+          <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
@@ -40,8 +42,9 @@ class App extends Component {
             <PrivateRoute exact path="/userindex/helpmeform" component={HelpMeForm} />
             <PrivateRoute exact path="/userindex/helpmeform/edit" component={HelpMeFormEdit} />
             <PrivateRoute exact path="/helpotherslist" component={HelpOthersList} />
+            <PrivateRoute exact path="/helpothersdetail/senderform/:requestId" component={SenderForm} />
             <PrivateRoute exact path="/helpothersdetail/:requestId" component={HelpOthersDetail} />
-            <PrivateRoute exact path="/helpothersdetail/senderform" component={SenderForm} />
+            <PrivateRoute exact path="/userindex/profile" component={Userprofile} />
             </Switch>
         </div>
       </AuthProvider>

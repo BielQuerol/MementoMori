@@ -11,38 +11,38 @@ class UserIndex extends Component {
   render() {
     return (
       <div>
-      <div className="userbox">
-        <h2>User index</h2>
-       <div className="useritem">
-        <Link style={{ textDecoration: 'none' }} to="/helpotherslist">
-          <button className="btngrey">
-            <h2>Help Requests</h2>
-          </button>
-        </Link>
+        <div className="userbox">
+          <h2>User index</h2>
+          <div className="useritem">
+            <Link style={{ textDecoration: "none" }} to="/helpotherslist">
+              <button className="btngrey">
+                <h2>Help Requests</h2>
+              </button>
+            </Link>
+          </div>
+          <div className="useritem">
+            <Link style={{ textDecoration: "none" }} to="/userindex/helpmeform">
+              <button className="btngrey">
+                <h2>Help me</h2>
+              </button>
+            </Link>
+          </div>
+          <div className="useritem">
+            <Link style={{ textDecoration: "none" }} to="/userindex/profile">
+              <button className="btngrey">
+                <h2>Profile</h2>
+              </button>
+            </Link>
+          </div>
+           <div className="useritem">
+            <button className="btngrey" onClick={this.props.logout}>
+              <h2>Log out</h2>
+            </button>
+          </div>
         </div>
-        <div className="useritem">
-        <Link style={{ textDecoration: 'none' }} to="/userindex/helpmeform">
-          <button className="btngrey">
-            <h2>Help me</h2>
-          </button>
-        </Link>
-        </div>
-        <div className="useritem">
-        <Link style={{ textDecoration: 'none' }} to="/userindex/edit">
-          <button className="btngrey">
-            <h2>Edit profile</h2>
-          </button>
-        </Link></div>
-        <div className="useritem">
-        
-          <button className="btngrey" onClick= {this.props.logout}>
-            <h2>Log out</h2>
-          </button>
-        
-      </div></div></div>
+      </div>
     );
   }
 }
 
-export default withAuth (UserIndex);
-
+export default withAuth(UserIndex);

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: ('http://localhost:4000/api', {withCredentials: true})
+  baseURL: ('process.env.REACT_APP_API_URI/api', {withCredentials: true})
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
@@ -20,9 +20,9 @@ export default {
       .catch(errorHandler);
   },
 
-  saveNewThing (newThing) {
+  saveNewThing (newUser) {
     // console.log('new thing is: ', newThing)
-    return service.post('/things/create', newThing)
+    return service.post('/users/create', newUser)
       .then(res => res.data)
       .catch(errorHandler);
   }
