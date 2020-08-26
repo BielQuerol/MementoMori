@@ -11,7 +11,7 @@ class HomePage extends Component {
           <div className="itembox">
             <img src={Logo}></img></div>
             <div className="itembox">
-              <h4> Welcome to Memento Mori. The webpage to help each other.</h4>
+              <h4> MEMENTO MORI The webpage to help each other.</h4>
             </div>
           </div>
         </div>

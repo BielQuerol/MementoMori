@@ -57,7 +57,7 @@ class HelpMeFormEdit extends Component {
     const { params } = this.props.match;
     
     axios
-      .delete(`${process.env.REACT_APP_API_URI}/api/helprequest/${params.id}`,{withCredentials: true} )
+      .delete(`${process.env.REACT_APP_API_URI}/api/helprequest/${params.requestId}`,{withCredentials: true} )
       .then(() => {
         this.props.history.push("/helpotherslist");
       })

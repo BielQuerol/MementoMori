@@ -16,7 +16,7 @@ class Userprofile extends Component {
     }
     componentDidMount() {
       axios
-      .get(`${process.env.REACT_APP_API_URI}/api/user` , {withCredentials: true})
+      .get(`${process.env.REACT_APP_API_URI}/api/users` , {withCredentials: true})
       .then((theResponse) => {
         const { email, password, userImage, helpRequests, helpOthersRequests} = theResponse;
          this.setState ({ email, password, userImage, helpRequests, helpOthersRequests});
@@ -55,7 +55,8 @@ class Userprofile extends Component {
             <h2>Edit profile</h2>
           </button>
         </Link>
-        </div></div>
+        
+</div></div>
            
             
 )

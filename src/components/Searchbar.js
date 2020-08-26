@@ -1,12 +1,12 @@
 import React from 'react';
 import { withAuth } from "../lib/AuthProvider";
+import "./Searchbar.css";
 
 class SearchBar extends React.Component {
   state = {
     search: ""
   }
-
-  handleChange = (e) => {
+    handleChange = (e) => {
     const updatedText = e.target.value;
     this.setState({ search: updatedText })
 

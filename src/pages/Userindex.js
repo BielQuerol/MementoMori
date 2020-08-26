@@ -32,8 +32,7 @@ class UserIndex extends Component {
                 <h2>Profile</h2>
               </button>
             </Link></div>
-            <div className="useritem"><Link style={{ textDecoration: "none" }} to="/userindex/helpmeform/edit"><button className="btngrey"><h2>Edit help request</h2></button></Link>
-          </div>
+            
            <div className="useritem"></div>
             <button className="btngrey" onClick={this.props.logout}>
               <h2>Log out</h2>

@@ -22,7 +22,7 @@ textarea {
   padding: 12px 5px;
   background: white;
   outline: none;
-
+  border: solid black;
   border-bottom: 1px dotted #fff;
   border-radius: 5px;
   margin: 5px;
@@ -41,7 +41,7 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
   background: #2ecc71;
-
+  border: 1px solid black;
   color: white;
 }
 .btngrey {
