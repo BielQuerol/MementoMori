@@ -12,7 +12,6 @@ class UserIndex extends Component {
     return (
       <div>
         <div className="userbox">
-          <h2>User index</h2>
           <div className="useritem">
             <Link style={{ textDecoration: "none" }} to="/helpotherslist">
               <button className="btngrey">
@@ -32,15 +31,16 @@ class UserIndex extends Component {
               <button className="btngrey">
                 <h2>Profile</h2>
               </button>
-            </Link>
+            </Link></div>
+            <div className="useritem"><Link style={{ textDecoration: "none" }} to="/userindex/helpmeform/edit"><button className="btngrey"><h2>Edit help request</h2></button></Link>
           </div>
-           <div className="useritem">
+           <div className="useritem"></div>
             <button className="btngrey" onClick={this.props.logout}>
               <h2>Log out</h2>
             </button>
           </div>
         </div>
-      </div>
+      
     );
   }
 }

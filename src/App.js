@@ -40,7 +40,7 @@ class App extends Component {
             <PrivateRoute exact path="/userindex" component={UserIndex} />
             <PrivateRoute exact path="/userindex/edit" component={EditUser} />
             <PrivateRoute exact path="/userindex/helpmeform" component={HelpMeForm} />
-            <PrivateRoute exact path="/userindex/helpmeform/edit" component={HelpMeFormEdit} />
+            <PrivateRoute exact path="/userindex/helpmeform/edit/:requestId" component={HelpMeFormEdit} />
             <PrivateRoute exact path="/helpotherslist" component={HelpOthersList} />
             <PrivateRoute exact path="/helpothersdetail/senderform/:requestId" component={SenderForm} />
             <PrivateRoute exact path="/helpothersdetail/:requestId" component={HelpOthersDetail} />

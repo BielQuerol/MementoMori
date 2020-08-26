@@ -56,7 +56,11 @@ class HelpOthersList extends Component {
               
             );
           })}
-        </div>
+        </div> <Link style={{ textDecoration: "none" }} to="/userindex">
+              <button className="btngrey">
+                <h2>Index</h2>
+              </button>
+            </Link>
       </div>
     );
   }

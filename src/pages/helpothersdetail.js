@@ -54,7 +54,7 @@ console.log("Aquí", this.props)
           <button className="btngrey"><h2>I can help</h2></button>
         </Link>
        <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}><button className="btngrey"><h2>Help requests</h2></button></Link>
-      </div></div></div>
+       </div></div></div>
     );
   }
 }

@@ -9,13 +9,16 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <img className ="logo" src={Logo} alt="Logo"/>
+        <div className="navbarlinks">
+        <Link className="btnavbar" style={{ textDecoration: "none" }} to="/userindex">
+         <h2>Index</h2>
+          </Link>
         <Link className="btnavbar" style={{ textDecoration: "none" }} to="/login">
          <h2>Login</h2>
           </Link>
-        <br />
         <Link className="btnavbar" style={{ textDecoration: "none" }} to="/signup">
          <h2>Signup</h2>
-          </Link>
+          </Link></div>
       </nav>
     );
   }

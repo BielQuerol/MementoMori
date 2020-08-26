@@ -98,10 +98,7 @@ class HelpMeFormEdit extends Component {
         <button className="btngrey" onClick={() => this.deleteHelpRequest()}>
          <h2>Delete</h2>
         </button>
-        <br />
-        <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}>
-        <button className="btngrey"><h2>Help requests</h2></button>
-        </Link>
+       
       </div>
     );
   }

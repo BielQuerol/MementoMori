@@ -45,15 +45,17 @@ class Userprofile extends Component {
             
             </div></div></div></div></div>
             <div className="useritem">
+        <Link style={{ textDecoration: 'none' }} to="/userindex/helpmeform/edit/:requestId">
+          <button className="btngrey">
+            <h2>Edit helpme form</h2>
+          </button>
+        </Link></div><div className="useritem">
         <Link style={{ textDecoration: 'none' }} to="/userindex/edit">
           <button className="btngrey">
             <h2>Edit profile</h2>
           </button>
-        </Link></div>
-            
-            
-             <Link style={{ textDecoration: "none" }} to={`/userindex`}>
-          <button className="btngrey"><h2>User index</h2></button></Link></div>
+        </Link>
+        </div></div>
            
             
 )

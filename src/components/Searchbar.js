@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
     const updatedText = e.target.value;
     this.setState({ search: updatedText })
 
-    this.props.filterCountries(updatedText)
+    this.props.filterHelpRequests(updatedText)
   }
 
   render() {
