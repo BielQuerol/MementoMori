@@ -9,11 +9,6 @@ body {
   height: 50px;
  
 }
-h1 {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 500;
-}
 .navbar {
   display: flex;
   flex-direction: row;
@@ -31,10 +26,14 @@ h1 {
 }
 .btnavbar {
   text-decoration: none;
-  
   border-color: black;
   margin: 10px;
   color:#5f7a6e;
+}
+@media (min-width: 200px) {
+  .btnavbar {
+    margin: 5px;
+  }
 }
 
 

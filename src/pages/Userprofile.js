@@ -3,6 +3,7 @@ import { withAuth } from "../lib/AuthProvider";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Userprofile.css";
+
 class Userprofile extends Component {
   constructor(props) {
     super(props);
@@ -43,40 +44,67 @@ class Userprofile extends Component {
     return (
       <div>
         {" "}
-        <div className="container">
-          <div className="heading">
-            <div className="row">
+        <div className="hello">
+          <div className="profilepic">
+            <img src={this.state.userImage} alt="profilepic"></img>
+          </div>
+          <div className="emailitem">
+            <h4>{this.state.email}</h4>
+          </div>
+          {this.state.helpMeRequests.map((el) => {
+            return (
               <div className="card">
                 <div className="card-header">
-                  <div className="card-body">
-                    <img src={this.state.userImage} alt="profilepic"></img>
-                  </div>
-                  <div className="card-header">
-                    <h4>{this.state.email}</h4>
-                  </div>
+                  <p>{el.title}</p>
+                </div>
+                <div className="card-body">
+                  <p>{el.description}</p>
+                </div>
 
-                  <div className="card-body">
-                    {this.state.helpMeRequests.reverse().map((el) => {
-                      return (
-                        <div>
-                          <p>{el.title}</p>
-                          <p>{el.description}</p>
-                         <Link to={`/userindex/helpmeform/edit/${el._id}`}><button className="btngrey">Edit</button></Link>  
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div className="card-body">
-                    {this.state.helpOthersRequests.map((el) => {
-                      return <p>{el.title}</p>;
-                    })}{" "}
-                  </div>
+                <div className="card-body">
+                  <p>{el.message}</p>
+                </div>
+                <div className="card-body">
+                  <p>{el.senderTel}</p>
+                </div>
+                <div className="card-body">
+                  <p>{el.senderEmail}</p>
+                </div>
+                <div className="card-bottom">
+                  <p>{el.city}</p>
+                </div>
+                <div className="card-body">
+                  <p>{el.description}</p>
                 </div>
               </div>
-            </div>
+            );
+          })}
+          <div className="enlace">
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/userindex/helpmeform/edit/:requestId`}
+            >
+              <button className="btngrey">
+                <h2>Edit help form</h2>
+              </button>
+            </Link>
           </div>
+          {this.state.helpOthersRequests.map((el) => {
+            return (
+              <div className="card">
+                <div className="card-header">
+                  <p>{el.title}</p>
+                </div>
+                <div className="card-body">
+                  <p>{el.description}</p>
+                </div>
+                <div className="card-bottom">
+                  <p>{el.city}</p>
+                </div>
+              </div>
+            );
+          })}{" "}
         </div>
-        
         <div className="useritem">
           <Link style={{ textDecoration: "none" }} to="/userindex/edit">
             <button className="btngrey">

@@ -30,7 +30,7 @@ class App extends Component {
           //con AuthProvider
         }
         <div className="container">
-          <h1>Memento Mori</h1>
+        
           <Navbar />
           <Switch>
             <AnonRoute path="/signup" component={Signup} />

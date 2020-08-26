@@ -109,7 +109,7 @@ class EditUser extends Component {
             <input
               type="text"
               name="password"
-              value={this.state.password}
+              value={""}
               onChange={(e) => this.handleChangePassword(e)}
             />
             <label>Profile Picture</label>
@@ -117,9 +117,9 @@ class EditUser extends Component {
               type="file"
               name="userImage"
               onChange={(e) => this.handleFileUpload(e)}
-            />
-            <button type="submit">Submit</button>
-          </form>
+            /> </form>
+            <button className="btngrey" type="submit"><h2>Submit</h2></button>
+          
         </div>{" "}
         <Link style={{ textDecoration: "none" }} to={`/userindex/profile`}>
           <button className="btngrey">
