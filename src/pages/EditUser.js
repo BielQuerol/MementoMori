@@ -15,14 +15,33 @@ class EditUser extends Component {
   }
   componentDidMount() {
     axios
-    .get(`${process.env.REACT_APP_API_URI}/api/user`)
-    .then((response) => {
-      const user = response.data
-      this.setState (user)
-    }).catch((err) => {
-      
-    });
+      .get(`${process.env.REACT_APP_API_URI}/api/user`, {
+        withCredentials: true,
+      })
+      .then((theResponse) => {
+        console.log(theResponse);
+        const { email, password, userImage, _id } = theResponse.data;
+        this.setState({
+          email,
+          password,
+          userImage,
+          _id,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+  //  componentDidMount() {
+  //     axios
+  //     .get(`${process.env.REACT_APP_API_URI}/api/user`)
+  //     .then((response) => {
+  //       const user = response.data
+  //       this.setState (user)
+  //     }).catch((err) => {
+
+  //     });
+  //   }
 
   handleFormSubmit = (event) => {
     const email = this.state.email;
@@ -32,10 +51,12 @@ class EditUser extends Component {
     event.preventDefault();
 
     axios
-      .put(`${process.env.REACT_APP_API_URI}/api/users/${this.props.theUser._id}`, {
+      .put(`${process.env.REACT_APP_API_URI}/api/users`, {
         email,
         password,
         userImage,
+      } ,  {
+        withCredentials: true,
       })
       .then(() => {
         this.props.history.push("/userindex/edit");
@@ -75,7 +96,8 @@ class EditUser extends Component {
       <div>
         <div className="wrapform">
           <h2>Edit profile</h2>
-          <form on Submit={this.handleFormSubmit}>
+          <img src={this.state.userImage}></img>
+          <form onSubmit={this.handleFormSubmit}>
             <label>Email:</label>
             <input
               type="text"
@@ -94,14 +116,17 @@ class EditUser extends Component {
             <input
               type="file"
               name="userImage"
-              value={this.state.userImage}
               onChange={(e) => this.handleFileUpload(e)}
             />
-            <input type="submit" value="submit" />
+            <button type="submit">Submit</button>
           </form>
-        </div> <Link style={{ textDecoration: "none" }} to={`/userindex/profile`}>
-          <button className="btngrey"><h2>Profile</h2></button></Link></div>
-      
+        </div>{" "}
+        <Link style={{ textDecoration: "none" }} to={`/userindex/profile`}>
+          <button className="btngrey">
+            <h2>Profile</h2>
+          </button>
+        </Link>
+      </div>
     );
   }
 }

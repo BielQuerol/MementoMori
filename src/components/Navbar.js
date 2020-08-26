@@ -8,7 +8,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar">
-        <div classNae="btnavbar"><img className ="logo" src={Logo} alt="Logo"/></div>
+        <div className="btnavbar"><img className ="logo" src={Logo} alt="Logo"/></div>
         <div className="navbarlinks">
         <Link className="btnavbar" style={{ textDecoration: "none" }} to="/userindex">
          <h2>Index</h2>

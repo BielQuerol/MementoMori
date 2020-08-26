@@ -9,11 +9,27 @@ class HelpMeFormEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title,
-      description: this.props.description,
-      city: this.props.city,
+      title: "",
+      description: "",
+      city: "",
     };
   }
+componentDidMount() {
+
+  const { params } = this.props.match;
+    //el id de URL vendrá de this.props.match.params.requestId
+    axios
+      .get(`${process.env.REACT_APP_API_URI}/api/helprequest/${params.requestId}`, {withCredentials: true})
+      .then((responseFromApi) => {
+        console.log(responseFromApi)
+        const theHelpRequest = responseFromApi.data;
+        const { _id, title, description, city} = theHelpRequest;
+        this.setState({ _id, title, description, city});
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
 
   handleFormSubmit = (event) => {
     const title = this.state.title;

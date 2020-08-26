@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const service = axios.create({
-  baseURL: ('process.env.REACT_APP_API_URI/api', {withCredentials: true})
+  baseURL: `${process.env.REACT_APP_API_URI}/api`, withCredentials: true
   // withCredentials: true // => you might need this when having the users in the app 
 });
 
