@@ -34,10 +34,10 @@ class HelpOthersList extends Component {
           <div className="container">
             {this.state.listOfHelpRequests.map((helprequest) => {
               return (
-                <div className="probando">
+                <div key={helprequest._id} className="probando">
                 <div className="row">
                   <div className="card">
-                    <div key={helprequest._id}></div>
+                  
                     <Link
                       style={{ textDecoration: "none" }}
                       to={`/helpothersdetail/${helprequest._id}`}>

@@ -53,7 +53,7 @@ class Userprofile extends Component {
           </div>
           {this.state.helpMeRequests.map((el) => {
             return (
-              <div className="card">
+              <div key={el._id} className="card">
                 <div className="card-header">
                   <p>{el.title}</p>
                 </div>
@@ -61,37 +61,40 @@ class Userprofile extends Component {
                   <p>{el.description}</p>
                 </div>
 
-                <div className="card-body">
-                  <p>{el.message}</p>
-                </div>
-                <div className="card-body">
-                  <p>{el.senderTel}</p>
-                </div>
-                <div className="card-body">
-                  <p>{el.senderEmail}</p>
-                </div>
-                <div className="card-bottom">
-                  <p>{el.city}</p>
-                </div>
-                <div className="card-body">
-                  <p>{el.description}</p>
+                {el.helpMessages.map((message) => {
+                  return (
+                    <div key={message._id}>
+                      <div className="card-body">
+                        <p>{message.message}</p>
+                      </div>
+                      <div className="card-body">
+                        <p>{message.senderTel}</p>
+                      </div>
+                      <div className="card-body">
+                        <p>{message.senderEmail}</p>
+                      </div>
+                      <div className="card-bottom">
+                        <p>{message.city}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="enlace">
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/userindex/helpmeform/edit/${el._id}`}
+                  >
+                    <button className="btngrey">
+                      <h2>Edit help form</h2>
+                    </button>
+                  </Link>
                 </div>
               </div>
             );
           })}
-          <div className="enlace">
-            <Link
-              style={{ textDecoration: "none" }}
-              to={`/userindex/helpmeform/edit/:requestId`}
-            >
-              <button className="btngrey">
-                <h2>Edit help form</h2>
-              </button>
-            </Link>
-          </div>
           {this.state.helpOthersRequests.map((el) => {
             return (
-              <div className="card">
+              <div key={el._id} className="card">
                 <div className="card-header">
                   <p>{el.title}</p>
                 </div>

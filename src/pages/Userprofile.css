@@ -79,7 +79,7 @@
   
   @media (min-width: 200px) {
     .card {
-      width: 400%;
+      width: 100%;
   }
   .btngrey {
     margin-bottom: 4rem;
