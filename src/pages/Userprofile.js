@@ -45,9 +45,11 @@ class Userprofile extends Component {
       <div>
         {" "}
         <div className="hello">
-          
-            <img className="profilepic" src={this.state.userImage} alt="profilepic"></img>
-          
+          <img
+            className="profilepic"
+            src={this.state.userImage}
+            alt="profilepic"
+          ></img>
           <div className="emailitem">
             <h3>{this.state.email}</h3>
           </div>
@@ -65,15 +67,17 @@ class Userprofile extends Component {
                   return (
                     <div key={message._id}>
                       <div className="card-body">
-                        <h4>Contact message:</h4><p>{message.message}</p>
+                        <h4>Contact message:</h4>
+                        <p>{message.message}</p>
                       </div>
                       <div className="card-body">
-                        <h4>Phone contact number:</h4><p>{message.senderTel}</p>
+                        <h4>Phone contact number:</h4>
+                        <p>{message.senderTel}</p>
                       </div>
                       <div className="card-body">
-                       <h4>Contact email:</h4><p>{message.senderEmail}</p>
+                        <h4>Contact email:</h4>
+                        <p>{message.senderEmail}</p>
                       </div>
-                      
                     </div>
                   );
                 })}
@@ -92,15 +96,19 @@ class Userprofile extends Component {
           })}
           {this.state.helpOthersRequests.map((el) => {
             return (
-              <div key={el._id} className="card">
-                <div className="card-header">
-                  <p>{el.title}</p>
-                </div>
-                <div className="card-body">
-                  <p>{el.description}</p>
-                </div>
-                <div className="card-bottom">
-                  <p>{el.city}</p>
+              <div className="hello" key={el._id}>
+                {" "}
+                <h3 className="letras">Helping with:</h3>
+                <div className="card">
+                  <div className="card-header">
+                    <p>{el.title}</p>
+                  </div>
+                  <div className="card-body">
+                    <p>{el.description}</p>
+                  </div>
+                  <div className="card-bottom">
+                    <p>{el.city}</p>
+                  </div>
                 </div>
               </div>
             );

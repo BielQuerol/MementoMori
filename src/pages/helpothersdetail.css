@@ -37,6 +37,8 @@ body {
   flex-flow: wrap;
 }
 .card {
+  max-width: 300px;
+  min-width: 250px;
   width: 20%;
   height: 20%;
   background: #fff;
@@ -71,12 +73,3 @@ body {
 
 
 
-@media screen and (max-width: 620px) {
-  .container {
-    width:40%;
-  }
-  .heading {
-    padding: 20px;
-    font-size: 30px;
-  }
-}

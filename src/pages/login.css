@@ -62,3 +62,18 @@ body {
     background: #2ecc71;
     color: white;
 }
+@media (min-width: 300px) {
+  .box{
+    width:250px;
+    padding: 10px;
+  }
+  .btnavbar {
+    margin: 5px;
+  }
+}
+@media (min-width: 400px) {
+  .box{
+    width:300px;
+    padding: 10px;
+  }
+}
