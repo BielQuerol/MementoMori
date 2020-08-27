@@ -67,9 +67,7 @@ body {
     width:250px;
     padding: 10px;
   }
-  .btnavbar {
-    margin: 5px;
-  }
+ 
 }
 @media (min-width: 400px) {
   .box{

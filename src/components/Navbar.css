@@ -22,12 +22,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  font-size: 14px;
   
 }
 .btnavbar {
   text-decoration: none;
   border-color: black;
-  margin: 10px;
+  margin: 5px;
   color:#5f7a6e;
 }
 @media (min-width: 200px) {
@@ -35,6 +36,30 @@ body {
     margin: 5px;
   }
 }
+@media (min-width: 400px) {
+.navbarlinks {
+  font-size: 17px;
+}
+}
+@media (min-width: 700px) {
+  .navbarlinks {
+    font-size:  20px;
+    padding: 5px;
+  }
+  }
+  @media (min-width: 1000px) {
+    .navbarlinks {
+      font-size: 18px;
+      padding: 10px;
+    }
+    }
+    @media (min-width: 1300px) {
+      .navbarlinks {
+        font-size:  18px;
+        padding: 15px;
+      }
+      } 
+
 
 
 

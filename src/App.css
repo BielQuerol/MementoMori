@@ -6,6 +6,61 @@
 .App {
   padding: 10px;;
 }
+.logo{
+  width: 50px;
+  height: 50px;
+ 
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  border: 2px solid #5f7a6e;
+  border-radius: 18px;
+}
+.navbarlinks{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 14px;
+  
+}
+.btnavbar {
+  text-decoration: none;
+  border-color: black;
+  margin: 5px;
+  color:#5f7a6e;
+}
+@media (min-width: 200px) {
+  .btnavbar {
+    margin: 5px;
+  }
+}
+@media (min-width: 400px) {
+.navbarlinks {
+  font-size: 17px;
+}
+}
+@media (min-width: 700px) {
+  .navbarlinks {
+    font-size:  20px;
+    padding: 5px;
+  }
+  }
+  @media (min-width: 1000px) {
+    .navbarlinks {
+      font-size: 18px;
+      padding: 10px;
+    }
+    }
+    @media (min-width: 1300px) {
+      .navbarlinks {
+        font-size:  18px;
+        padding: 15px;
+      }
+      } 
 
 
 

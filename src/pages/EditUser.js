@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link , withRouter } from "react-router-dom";
+
 import axios from "axios";
 import service from "../api/service";
 
@@ -59,7 +60,7 @@ class EditUser extends Component {
         withCredentials: true,
       })
       .then(() => {
-        this.props.history.push("/userindex/edit");
+        this.props.history.push("/userindex/profile");
       })
       .catch((error) => console.log(error));
   };
@@ -84,6 +85,7 @@ class EditUser extends Component {
     service
       .handleUpload(uploadData)
       .then((response) => {
+        console.log(response)
         this.setState({ userImage: response.secure_url });
       })
       .catch((err) => {
@@ -130,4 +132,4 @@ class EditUser extends Component {
     );
   }
 }
-export default withAuth(EditUser);
+export default withRouter(withAuth(EditUser));
