@@ -37,7 +37,7 @@ console.log("Aquí", this.props)
       <div>
   
       <div className="container">
-      <div className="heading">
+      
       <div className="row">
       <div className="card">
       <div className="card-header">
@@ -49,12 +49,12 @@ console.log("Aquí", this.props)
         
       </div>
       </div>
-      
+      </div>
       <Link style={{ textDecoration: "none" }} to={`/helpothersdetail/senderform/${this.state._id}`}>
           <button className="btngrey"><h2>I can help</h2></button>
         </Link>
        <Link style={{ textDecoration: "none" }} to={"/helpotherslist"}><button className="btngrey"><h2>Help requests</h2></button></Link>
-       </div></div></div>
+       </div>
     );
   }
 }

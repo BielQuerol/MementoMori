@@ -117,9 +117,9 @@ class EditUser extends Component {
               type="file"
               name="userImage"
               onChange={(e) => this.handleFileUpload(e)}
-            /> </form>
-            <button className="btngrey" type="submit"><h2>Submit</h2></button>
-          
+            /> 
+            <button className="btngrey" type="submit" value="submit"><h2>Submit</h2></button>
+            </form>
         </div>{" "}
         <Link style={{ textDecoration: "none" }} to={`/userindex/profile`}>
           <button className="btngrey">

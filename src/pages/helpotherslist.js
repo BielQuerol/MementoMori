@@ -29,7 +29,6 @@ class HelpOthersList extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
         
           <div className="container">
             {this.state.listOfHelpRequests.map((helprequest) => {

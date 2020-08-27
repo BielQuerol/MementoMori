@@ -13,18 +13,18 @@
     align-items: center;
   }
   .profilepic   {
-    max-width: 45px;
-    max-height: 45px ;
-    border-radius: 24px;
+    margin-top: 5rem;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius:99px;
     align-items: center;
+    border: 2px solid #5f7a6e;
     
   }
   .emailitem{
+    margin: 15px;
     align-items: center;
   }
-  
-   
-  
   .row {
     display: flex;
     flex-direction: row;
@@ -34,7 +34,7 @@
   .card {
     width: 100%;
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #5f7a6e;
     margin-bottom: 50px;
     transition: 0.3s;
   }

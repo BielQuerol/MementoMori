@@ -45,37 +45,35 @@ class Userprofile extends Component {
       <div>
         {" "}
         <div className="hello">
-          <div className="profilepic">
-            <img src={this.state.userImage} alt="profilepic"></img>
-          </div>
+          
+            <img className="profilepic" src={this.state.userImage} alt="profilepic"></img>
+          
           <div className="emailitem">
-            <h4>{this.state.email}</h4>
+            <h3>{this.state.email}</h3>
           </div>
           {this.state.helpMeRequests.map((el) => {
             return (
               <div key={el._id} className="card">
                 <div className="card-header">
-                  <p>{el.title}</p>
+                  <h2>{el.title}</h2>
                 </div>
                 <div className="card-body">
-                  <p>{el.description}</p>
+                  <h4>{el.description}</h4>
                 </div>
 
                 {el.helpMessages.map((message) => {
                   return (
                     <div key={message._id}>
                       <div className="card-body">
-                        <p>{message.message}</p>
+                        <h4>Contact message:</h4><p>{message.message}</p>
                       </div>
                       <div className="card-body">
-                        <p>{message.senderTel}</p>
+                        <h4>Phone contact number:</h4><p>{message.senderTel}</p>
                       </div>
                       <div className="card-body">
-                        <p>{message.senderEmail}</p>
+                       <h4>Contact email:</h4><p>{message.senderEmail}</p>
                       </div>
-                      <div className="card-bottom">
-                        <p>{message.city}</p>
-                      </div>
+                      
                     </div>
                   );
                 })}
